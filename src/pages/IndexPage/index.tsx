@@ -6,41 +6,52 @@ import {
   Bloomberg,
   CrunchBase,
   DownArrowYellow,
+  Dumbell,
   Facebook,
+  FitnessApparel,
   FooterAppView,
   FooterLogo,
-  Instagram,
-  Linkedin,
-  Logo,
+  HealthCoaching,
   Multinational,
-  OrizBanner,
-  OrizLady2,
-  OrizPartners,
-  OuterFrame,
-  OuterFrame2,
+  Nutrition,
+  Organic,
   Playstore,
   PromoTag,
+  QuickOnboarding,
   RightArrow,
   RightArrowWhite,
+  Spa,
   SquiglyLine,
+  Supplements,
   Techcrunch,
-  Telegram,
-  Twitter,
-  WebFrame,
   Yahoo,
 } from "@/assets/svg";
 import ORIZLady from "@/assets/image/ORIZ-Lady.png";
+import HamburgerMenuComponent from "@/components/hamburger-menu";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+
+const scrollablesFeatures = [
+  { title: "Fitness Classes & Programs", image: Dumbell },
+  { title: "Spa & Wellness Services", image: Spa },
+  { title: "Nutrition & Meal Plans", image: Nutrition },
+  { title: "Health Coaching & Consultations", image: HealthCoaching },
+  { title: "Natural & Organic Products", image: Organic },
+  { title: "Wellness Products & Supplement", image: Supplements },
+  { title: "Quick and easy onboarding", image: QuickOnboarding },
+  { title: "Fitness Apparel & Accessories", image: FitnessApparel },
+];
 
 const IndexPage = () => {
   return (
     <main>
       <section className="bg-black">
-        <nav className="mx-auto flex w-11/12 items-center justify-between pt-14 font-jakarta text-white 2xl:max-w-[1440px]">
+        <nav className="mx-auto flex w-11/12 items-center justify-between pt-7 font-jakarta text-white lg:pt-14 2xl:max-w-[1440px]">
           <a href="#">
-            <Logo />
+            <img src="src/assets/svg/oriz-logo.svg" alt="Oriz logo" />
           </a>
 
-          <ul className="flex gap-8">
+          <ul className="hidden gap-8 lg:flex">
             <li className="text-base font-medium">
               <a href="#">Products</a>
             </li>
@@ -55,21 +66,60 @@ const IndexPage = () => {
             </li>
           </ul>
 
-          <div className="flex gap-x-6">
+          <div className="hidden gap-x-6 lg:flex">
             <a href="#" className="rounded-xl border-[2px] border-white px-9 py-5">
               Sign In
             </a>
 
             <button className="rounded-xl bg-[#252525] px-4">Get Started— For Free</button>
           </div>
+
+          <HamburgerMenuComponent />
         </nav>
 
-        <div className="mx-auto mt-16 grid w-11/12 grid-cols-2 items-center text-white 2xl:max-w-[1440px]">
+        <div className="mx-auto mt-16 grid w-11/12 text-white lg:hidden 2xl:max-w-[1440px]">
+          <button className="mb-[33px] flex w-fit items-center gap-x-2 rounded-[333px] border border-[#6C6C6C] bg-[#2A2A2A] px-4 py-3">
+            <span className="bg rounded-[166px] bg-green-100 px-[13px] py-[5px]">New</span>{" "}
+            <span>We’re live across all African Countries</span>
+            <img src={RightArrowWhite} alt="forward arrow icon" />
+          </button>
+
+          <img src={ORIZLady} alt="A smilling lady" className="mb-10 w-full rounded-[50px]" />
+
+          <div>
+            <h2 className="font-duplicate-sans text-[35px] leading-tight lg:text-[66px]">
+              Personalised plans for your unique{" "}
+              <span className="relative">
+                wellness
+                <span className="absolute -bottom-2.5 left-0 hidden lg:block">
+                  <img src={SquiglyLine} alt="Squigly line" />
+                </span>
+              </span>{" "}
+              Journey
+            </h2>
+            <p className="my-8 font-jakarta text-base leading-10">
+              ORIZ is a solution for your health and wellness journey, providing you with personalized tools and benefits to help you lead a
+              healthier life.
+            </p>
+
+            <div className="flex flex-col gap-x-6 gap-y-3">
+              <button className="rounded-xl bg-green-100 px-9 py-5 text-base">
+                <span className="font-medium">Use Oriz AI</span> — For Free!{" "}
+              </button>
+
+              <button className="flex h-[50px] items-center justify-center rounded-xl bg-[#252525] px-9 text-base text-white">
+                Learn More
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div className="mx-auto mt-16 hidden w-11/12 grid-cols-2 items-center text-white lg:grid 2xl:max-w-[1440px]">
           <div>
             <button className="mb-[33px] flex items-center gap-x-2 rounded-[333px] border border-[#6C6C6C] bg-[#2A2A2A] px-4 py-3">
               <span className="bg rounded-[166px] bg-green-100 px-[13px] py-[5px]">New</span>{" "}
               <span>We’re live across all African Countries</span>
-              <RightArrowWhite />
+              <img src={RightArrowWhite} alt="forward arrow icon" />
             </button>
 
             <h2 className="max-w-[600px] font-duplicate-sans text-[66px] leading-tight">
@@ -77,7 +127,7 @@ const IndexPage = () => {
               <span className="relative">
                 wellness
                 <span className="absolute -bottom-2.5 left-0">
-                  <SquiglyLine />
+                  <img src={SquiglyLine} alt="Squigly line" />
                 </span>
               </span>{" "}
               Journey
@@ -101,48 +151,56 @@ const IndexPage = () => {
 
         <div className="mx-auto mt-20 w-11/12 pb-12 2xl:max-w-[1440px]">
           <h4 className="mb-7 text-pitch-white">Featured on</h4>
-          <div className="flex justify-between">
-            <Yahoo />
-            <Bloomberg />
-            <Techcrunch />
-            <CrunchBase />
+          <div className="flex flex-wrap justify-between gap-[42px]">
+            <img src={Yahoo} alt="Yahoo logo" />
+            <img src={Bloomberg} alt="Bloomberg logo" />
+            <img src={Techcrunch} alt="Techcrunch logo" />
+            <img src={CrunchBase} alt="CrunchBase logo" />
           </div>
+        </div>
+
+        <div className="flex gap-x-5 py-4">
+          {scrollablesFeatures.map((feature, index) => (
+            <div className="flex items-center gap-x-2 rounded-lg border border-[#ffffff26] bg-[#ffffff26] px-4 py-2.5">
+              <img src={feature.image} alt={feature.title} key={index} />
+              <p className="truncate font-jakarta text-sm text-white">{feature.title}</p>
+            </div>
+          ))}
         </div>
       </section>
 
-      <section className="mx-auto mt-28 w-11/12 2xl:max-w-[1440px]">
-        <div className="flex justify-between">
+      <section className="mx-auto mt-28 w-11/12 2xl:max-w-[1440px] 2xl:overflow-hidden">
+        <div className="flex flex-col justify-between xl:flex-row">
           <div className="">
-            <h3 className="max-w-[500px] font-duplicate-sans text-[66px] leading-tight text-pitch-white">
+            <h3 className="font-duplicate-sans text-[66px] leading-tight text-pitch-white xl:max-w-[500px]">
               We are trusted by <span className="text-[#ED5E3B]">a community</span> of <br />
               <span className="text-black">1 Million+</span> Africans
             </h3>
 
-            <p className="mt-8 max-w-[480px] text-xl leading-loose">
+            <p className="mt-8 text-xl leading-loose xl:max-w-[480px]">
               We help you build a healthy lifestyle using an incentivised reward called ORIZ tokens — redeemable for discounts and benefits.
             </p>
 
-            <div className="mt-12 flex gap-x-5">
+            <div className="mt-12 flex flex-col gap-x-5 gap-y-4 lg:flex-row">
               <button className="flex items-center gap-x-2 rounded-xl bg-black px-8 py-5 text-base text-white">
-                <Playstore />
+                <img src={Playstore} alt="Play store icon" />
                 Get on Google Play
               </button>
 
               <button className="flex items-center gap-x-2 rounded-xl bg-black px-8 py-5 text-base text-white">
-                <AppStore /> Get on App Store
+                <img src={AppStore} alt="app store icon" /> Get on App Store
               </button>
             </div>
           </div>
 
-          <div className="-mr-[9%]">
-            <OrizLady2 />
+          <div className="mt-16 flex justify-center xl:-mr-[9%]">
+            <img src="src/assets/svg/oriz-lady2.svg" alt="Oriz lady" className="hidden xl:block" />
+            <img src="src/assets/svg/oriz-lady2-mobile.svg" alt="Oriz lady" className="w-full xl:hidden" />
           </div>
         </div>
 
-        <div className="flex gap-[9%]">
-          <div className="-ml-[9%] -mt-96">
-            <OrizBanner />
-          </div>
+        <div className="flex flex-col-reverse gap-[9%] xl:flex-row">
+          <img src="src/assets/svg/oriz-banner.svg" className="-ml-[9%] xl:-mt-96" alt="Oriz banner" />
 
           <div className="w-full">
             <ol className="font-duplicate-sans text-[41px]">
@@ -171,7 +229,7 @@ const IndexPage = () => {
           </div>
         </div>
 
-        <div className="mt-20 grid grid-cols-[2fr_1fr] items-center">
+        <div className="mt-20 grid items-center lg:grid-cols-[2fr_1fr]">
           <div>
             <h3 className="max-w-[650px] font-duplicate-sans text-7xl">We’re your partner for a healthier future. </h3>
             <p className="mt-10 max-w-[565px] font-jakarta text-xl">
@@ -179,42 +237,44 @@ const IndexPage = () => {
             </p>
           </div>
 
-          <Multinational />
+          <div className="mt-[50px] flex justify-center lg:justify-start">
+            <img src={Multinational} alt="" />
+          </div>
         </div>
 
         <div className="mt-20">
           <div className="flex justify-between">
-            <div className="flex items-center gap-6">
+            <div className="hidden items-center gap-6 lg:flex">
               <span className="flex h-[74px] w-[74px] items-center justify-center rounded-full bg-[#218068] font-duplicate-sans text-3xl text-white">
                 01
               </span>{" "}
               <h3 className="font-duplicate-sans text-[44px]">Fitness & Wellness Plans</h3>
             </div>
 
-            <div className="flex items-center gap-6">
+            <div className="ml-auto flex items-center gap-6 lg:ml-[unset]">
               <button className="flex h-[74px] w-[74px] items-center justify-center rounded-full bg-black">
-                <BackArrow />
+                <img src={BackArrow} alt="back arrow icon" />
               </button>
               <button className="flex items-center gap-x-2.5 rounded-[49px] bg-[#F5F5F5] px-7 py-6 text-xl">
-                Next <RightArrow />
+                Next <img src={RightArrow} alt="forward arrow icon" />
               </button>
             </div>
           </div>
 
-          <div className="mt-6 flex h-[650px] justify-between overflow-hidden rounded-[49px] border-[4px] border-[#000000] bg-[#195D4C] px-12 py-20">
+          <div className="mt-6 flex max-h-[1000px] flex-col justify-between gap-x-8 overflow-hidden rounded-[49px] border-[4px] border-[#000000] bg-[#195D4C] px-12 py-20 lg:h-[650px] lg:flex-row">
             <div>
-              <h3 className="max-w-[452px] font-duplicate-sans text-[53px] leading-tight text-white">
+              <h3 className="font-duplicate-sans text-[53px] leading-tight text-white lg:max-w-[452px]">
                 Access to health, Fitness & wellness options
               </h3>
 
-              <p className="my-[33px] max-w-[455px] font-jakarta text-xl text-white">
+              <p className="my-[33px] font-jakarta text-xl text-white lg:max-w-[455px]">
                 Our  plans allows you to access various gyms, fitness programs, wellness centers, and healthy nutritional options,  all over
                 the globe.
               </p>
 
-              <div className="flex items-center gap-x-6">
+              <div className="hidden items-center gap-x-6 xl:flex">
                 <button className="flex items-center gap-x-1 rounded-[13px] bg-white px-9 py-[21px]">
-                  Get Started — For Free! <RightArrow />
+                  Get Started — For Free! <img src={RightArrow} alt="forward arrow icon" />
                 </button>
 
                 <a href="#" className="rounded-[13px] bg-[#f5f5f536] px-9 py-[21px] text-white">
@@ -225,7 +285,9 @@ const IndexPage = () => {
               <p className="mt-3 font-jakarta text-base text-white">*Up-to 15% exclusive discounts on any of our Services</p>
             </div>
 
-            <AppView />
+            <div className="w-full xl:w-[unset]">
+              <img src={AppView} alt="app store icon" />
+            </div>
           </div>
 
           <div className="mt-3 flex gap-x-5">
@@ -236,48 +298,48 @@ const IndexPage = () => {
       </section>
 
       <section className="mt-8" style={{ background: "linear-gradient(to bottom, white 0%, white 35%, black 35%, black 100%)" }}>
-        <div className="mx-auto grid w-11/12 grid-cols-2 gap-x-8 2xl:max-w-[1440px]">
+        <div className="mx-auto grid w-11/12 gap-8 xl:grid-cols-2 2xl:max-w-[1440px]">
           <div className="h-[735px] overflow-hidden rounded-[50px] border-[5px] bg-[#FF884D] px-10 pt-14">
             <h3 className="mb-6 max-w-[254px] font-duplicate-sans text-5xl text-white">join our Community</h3>
             <p className="max-w-[420px] font-jakarta text-white">
               Connect with like-minded individuals, fitness enthusiasts, and experts in our thriving community.
             </p>
 
-            <div className="mt-8 flex gap-x-5">
+            <div className="mt-8 flex flex-col gap-x-5 gap-y-3 xl:flex-row">
               <button className="flex items-center gap-x-2 rounded-xl bg-white px-8 py-[18px] text-base">
-                <Playstore />
+                <img src={Playstore} alt="Play store icon" />
                 Get on Google Play
               </button>
 
               <button className="flex items-center gap-x-2 rounded-xl bg-white px-8 py-[18px] text-base">
-                <AppStoreBlk /> Get on App Store
+                <img src={AppStoreBlk} alt="app store icon" /> Get on App Store
               </button>
             </div>
 
-            <OuterFrame2 />
+            <img src="src/assets/svg/outer-frame2.svg" alt="" />
           </div>
 
           <div className="h-[735px] overflow-hidden rounded-[50px] border-[5px] bg-[#FFF8E4] px-10 pt-14">
             <h3 className="mb-6 max-w-[254px] font-duplicate-sans text-5xl">Tokenized Rewards</h3>
             <p className="max-w-[420px] font-jakarta">Earn ORIZ tokens for healthy activities, redeemable for discounts and benefits.</p>
 
-            <div className="mt-8 flex gap-x-5">
+            <div className="mt-8 flex flex-col gap-x-5 gap-y-3 xl:flex-row">
               <button className="flex items-center gap-x-2 rounded-xl bg-black px-8 py-[18px] text-base text-white">
-                <Playstore />
+                <img src={Playstore} alt="Play store icon" />
                 Get on Google Play
               </button>
 
               <button className="flex items-center gap-x-2 rounded-xl bg-black px-8 py-[18px] text-base text-white">
-                <AppStore /> Get on App Store
+                <img src={AppStore} alt="app store icon" /> Get on App Store
               </button>
             </div>
 
-            <OuterFrame />
+            <img src="src/assets/svg/outer-frame.svg" alt="" />
           </div>
         </div>
       </section>
 
-      <section className="bg-black pb-80 pt-8">
+      <section className="overflow-hidden bg-black pb-80 pt-8">
         <div className="relative mx-auto mt-6 flex w-11/12 justify-between rounded-[49px] border-[4px] border-[#2B2B2B] bg-[#218168] px-12 py-20 2xl:max-w-[1440px]">
           <div>
             <h3 className="max-w-[452px] font-duplicate-sans text-[53px] leading-tight text-white">Oriz MarketPlace</h3>
@@ -288,7 +350,7 @@ const IndexPage = () => {
 
             <div className="flex items-center gap-x-6">
               <button className="flex items-center gap-x-2 rounded-[13px] bg-white px-9 py-[21px]">
-                Get Started — For Free! <RightArrow />
+                Get Started — For Free! <img src={RightArrow} alt="forward arrow icon" />
               </button>
 
               <a href="#" className="rounded-[13px] bg-[#f5f5f536] px-9 py-[21px] text-white">
@@ -297,29 +359,29 @@ const IndexPage = () => {
             </div>
 
             <div className="mt-8 flex">
-              <PromoTag />
+              <img src={PromoTag} alt="Promo Tag icon" />
               <p className="max-w-[297px] font-jakarta text-base text-white">
                 Up-to 15% exclusive discounts on healthcare services, gym memberships, wearables, and more!
               </p>
             </div>
           </div>
 
-          <div className="absolute -right-32">
-            <WebFrame />
+          <div className="absolute -bottom-80 lg:-right-32">
+            <img src="src/assets/svg/web-frame.svg" alt="" />
           </div>
         </div>
 
-        <div className="mx-auto mt-8 w-8/12 2xl:max-w-[1440px]">
+        <div className="mx-auto mt-96 w-8/12 lg:mt-8 2xl:max-w-[1440px]">
           <h4 className="font-duplicate-sans text-[50px] text-white">Coming Soon on</h4>
 
-          <div className="flex gap-x-5">
+          <div className="mt-4 flex flex-col gap-y-3 lg:mt-0 xl:flex-row xl:gap-x-5">
             <button className="flex items-center gap-x-2 rounded-xl bg-white px-8 py-[18px] text-[13px]">
-              <Playstore />
+              <img src={Playstore} alt="Play store icon" />
               Google Play
             </button>
 
             <button className="flex items-center gap-x-2 rounded-xl bg-white px-8 py-[18px] text-[13px]">
-              <AppStoreBlk /> App Store
+              <img src={AppStoreBlk} alt="app store icon" /> App Store
             </button>
           </div>
         </div>
@@ -328,11 +390,12 @@ const IndexPage = () => {
       <section>
         <div className="bg-black pb-10 pt-8">
           <div className="mx-auto mt-6 w-11/12 py-20 2xl:max-w-[1440px]">
-            <div className="flex gap-x-2">
-              <h3 className="mb-14 font-jakarta text-7xl text-white">Categories of partners</h3> <DownArrowYellow />
+            <div className="flex items-center justify-between gap-x-2">
+              <h3 className="mb-14 font-jakarta text-[27px] text-white lg:text-7xl">Categories of partners</h3>
+              <img src={DownArrowYellow} alt="down arrow icon" />
             </div>
 
-            <div className="flex justify-between">
+            <div className="grid grid-cols-2 gap-5 sm:flex sm:flex-wrap lg:justify-between">
               <div className="flex w-[195px] items-center justify-center rounded-2xl border-[3px] border-[#FFC501] bg-[#FFDFEB] px-[31px] py-[28px] text-base">
                 <p className="text-center">Gym & Spas’</p>
               </div>
@@ -376,28 +439,30 @@ const IndexPage = () => {
       </section>
 
       <section>
-        <div className="mx-auto 2xl:max-w-[1440px]">
-          <div className="flex items-end justify-between">
-            <div className="ml-[15%]">
-              <h3 className="font-duplicate-sans text-[65px] text-[#BCC1C8]">Join the network</h3>
-              <p className="max-w-[518px] font-jakarta text-[24px]">
+        <div className="mx-auto w-11/12 lg:w-full 2xl:max-w-[1440px]">
+          <div className="flex flex-col justify-between gap-y-5 lg:flex-row lg:items-end">
+            <div className="lg:ml-[15%]">
+              <h3 className="font-duplicate-sans text-[35px] text-[#BCC1C8] lg:text-[65px]">Join the network</h3>
+              <p className="font-jakarta text-base lg:max-w-[518px] lg:text-[24px]">
                 We help you build a healthy lifestyle and reward you with blockchain rewards and other incentives.{" "}
               </p>
             </div>
 
-            <div className="mr-4 flex gap-x-6">
+            <div className="flex flex-col gap-x-6 gap-y-4 lg:mr-4 lg:flex-row">
               <button className="rounded-xl bg-[#252525] px-9 py-5 text-base text-white">
                 <span className="font-medium">Use Oriz AI</span> — For Free!{" "}
               </button>
 
-              <button className="rounded-xl bg-[#F0F0F0] px-9 text-base text-black">Learn More</button>
+              <button className="flex h-[50px] items-center justify-center rounded-xl bg-green-100 px-9 text-base text-white lg:bg-[#F0F0F0] lg:text-black">
+                Learn More
+              </button>
             </div>
           </div>
         </div>
       </section>
 
       <section className="pb-56 pt-52" style={{ background: "linear-gradient(to bottom, white 0%, white 45%, #0C513F 45%, #0C513F 100%)" }}>
-        <div className="mx-auto grid w-11/12 grid-cols-3 items-center justify-items-center 2xl:max-w-[1440px]">
+        <div className="mx-auto grid w-11/12 items-center justify-items-center gap-y-20 xl:grid-cols-3 2xl:max-w-[1440px]">
           <div className="relative w-fit rounded-[25px] border-[4px] border-black bg-white px-[50px] pb-[54px] pt-[58px]">
             <span className="absolute -top-6 left-1/2 -translate-x-1/2 transform rounded-[9px] border-[4px] bg-[#FFC501] px-4 py-1.5">
               Basic Plan
@@ -476,32 +541,34 @@ const IndexPage = () => {
         </div>
       </section>
 
-      <footer className="bg-black">
-        <div className="mx-auto w-11/12 2xl:max-w-[1440px]">
-          <div className="relative flex justify-between pb-20 pt-28">
-            <div>
-              <FooterLogo />
+      <footer className="overflow-hidden">
+        <div className="" style={{ background: "linear-gradient(to bottom, #0C513F 0%, #0C513F 45%, black 45%, black 100%)" }}>
+          <div className="relative mx-auto flex w-11/12 flex-col-reverse justify-between gap-y-16 pb-20 pt-28 lg:flex-row lg:items-end 2xl:max-w-[1440px]">
+            <div className="mb-10">
+              <img src={FooterLogo} alt="Oriz logo" />
               <p className="my-6 max-w-[455px] font-jakarta text-xl text-white">
                 Revolutionising health and wellness with cutting-edge technology
               </p>
-              <div className="flex gap-x-5">
-                <button className="flex items-center gap-x-2 rounded-xl bg-white px-8 py-[18px] text-[13px]">
-                  <Playstore />
+              <div className="flex flex-col gap-y-2.5 lg:flex-row lg:gap-x-5">
+                <button className="flex items-center justify-center gap-x-2 rounded-xl bg-white px-8 py-[18px] text-[13px] lg:justify-start">
+                  <img src={Playstore} alt="Play store icon" />
                   Google Play
                 </button>
 
-                <button className="flex items-center gap-x-2 rounded-xl bg-white px-8 py-[18px] text-[13px]">
-                  <AppStoreBlk /> App Store
+                <button className="flex items-center justify-center gap-x-2 rounded-xl bg-white px-8 py-[18px] text-[13px] lg:justify-start">
+                  <img src={AppStoreBlk} alt="app store icon" /> App Store
                 </button>
               </div>
             </div>
 
-            <div className="absolute -right-[9%] -top-52">
-              <FooterAppView />
+            <div className="relative top-0 lg:-right-[9%]">
+              <img src={FooterAppView} alt="Oriz app preview" />
             </div>
           </div>
+        </div>
 
-          <div className="flex justify-between border-y border-[#2D2D2D] py-20">
+        <div className="bg-black">
+          <div className="mx-auto grid w-11/12 justify-between gap-y-11 border-y border-[#2D2D2D] py-20 md:grid-cols-2 xl:flex 2xl:max-w-[1440px]">
             <div>
               <h5 className="mb-5 font-jakarta text-[#868686]">Products</h5>
               <ul className="grid gap-y-5 font-jakarta text-white">
@@ -623,33 +690,33 @@ const IndexPage = () => {
             </div>
           </div>
 
-          <div className="flex justify-between py-14">
+          <div className="mx-auto flex w-11/12 flex-col items-center justify-between gap-y-6 py-14 lg:flex-row 2xl:max-w-[1440px]">
             <p className="text-white">© Oris technologies Nigeria Limited</p>
 
             <ul className="flex gap-x-4">
               <li>
                 <a href="#">
-                  <Facebook />
+                  <img src={Facebook} alt="facebook logo" />
                 </a>
               </li>
               <li>
                 <a href="#">
-                  <Twitter />
+                  <img src="src/assets/svg/twitter.svg" alt="twitter logo" />
                 </a>
               </li>
               <li>
                 <a href="#">
-                  <Instagram />
+                  <img src="src/assets/svg/instagram.svg" alt="instagram logo" />
                 </a>
               </li>
               <li>
                 <a href="#">
-                  <Linkedin />
+                  <img src="src/assets/svg/linkedin.svg" alt="linkedin logo" />
                 </a>
               </li>
               <li>
                 <a href="#">
-                  <Telegram />
+                  <img src="src/assets/svg/telegram.svg" alt="telegram logo" />
                 </a>
               </li>
             </ul>
