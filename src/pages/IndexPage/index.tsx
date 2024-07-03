@@ -40,9 +40,35 @@ const scrollablesFeatures = [
   { title: "Wellness Products & Supplement", image: Supplements },
   { title: "Quick and easy onboarding", image: QuickOnboarding },
   { title: "Fitness Apparel & Accessories", image: FitnessApparel },
+  { title: "Fitness Classes & Programs", image: Dumbell },
+  { title: "Spa & Wellness Services", image: Spa },
+  { title: "Nutrition & Meal Plans", image: Nutrition },
+  { title: "Health Coaching & Consultations", image: HealthCoaching },
+  { title: "Natural & Organic Products", image: Organic },
+  { title: "Wellness Products & Supplement", image: Supplements },
+  { title: "Quick and easy onboarding", image: QuickOnboarding },
+  { title: "Fitness Apparel & Accessories", image: FitnessApparel },
 ];
 
 const IndexPage = () => {
+  const marqueeRef = useRef(null);
+
+  useEffect(() => {
+    const marquee = marqueeRef?.current;
+    // @ts-ignore
+    const marqueeWidth = marquee?.scrollWidth;
+
+    gsap.to(marquee, {
+      x: -marqueeWidth,
+      duration: 50,
+      ease: "linear",
+      repeat: -1,
+      modifiers: {
+        x: gsap.utils.unitize((x) => parseFloat(x) % marqueeWidth),
+      },
+    });
+  }, []);
+
   return (
     <main>
       <section className="bg-black">
@@ -159,7 +185,7 @@ const IndexPage = () => {
           </div>
         </div>
 
-        <div className="flex gap-x-5 py-4">
+        <div className="flex gap-x-5 py-4" ref={marqueeRef}>
           {scrollablesFeatures.map((feature, index) => (
             <div className="flex items-center gap-x-2 rounded-lg border border-[#ffffff26] bg-[#ffffff26] px-4 py-2.5">
               <img src={feature.image} alt={feature.title} key={index} />
