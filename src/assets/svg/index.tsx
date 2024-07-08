@@ -38,6 +38,20 @@ import Organic from "./organic.svg";
 import Supplements from "./supplements.svg";
 import QuickOnboarding from "./quick-onboarding.svg";
 import FitnessApparel from "./fitness-apparel.svg";
+import CarouselGroup1 from "./caurosel-group1.svg";
+import CarouselGroup2 from "./caurosel-group2.svg";
+import CarouselGroup3 from "./caurosel-group3.svg";
+import CarouselGroup4 from "./caurosel-group4.svg";
+import CarouselGroup5 from "./caurosel-group5.svg";
+import CarouselGroup6 from "./caurosel-group6.svg";
+import CarouselGroup7 from "./caurosel-group7.svg";
+import CarouselGroup8 from "./caurosel-group8.svg";
+import CarouselGroup9 from "./caurosel-group9.svg";
+import CarouselGroup10 from "./caurosel-group10.svg";
+import CarouselGroup11 from "./caurosel-group11.svg";
+import CarouselGroup12 from "./caurosel-group12.svg";
+import CarouselGroup13 from "./caurosel-group13.svg";
+import CarouselGroup14 from "./caurosel-group14.svg";
 
 export {
   Logo,
@@ -80,4 +94,18 @@ export {
   Supplements,
   QuickOnboarding,
   FitnessApparel,
+  CarouselGroup1,
+  CarouselGroup2,
+  CarouselGroup3,
+  CarouselGroup4,
+  CarouselGroup5,
+  CarouselGroup6,
+  CarouselGroup7,
+  CarouselGroup8,
+  CarouselGroup9,
+  CarouselGroup10,
+  CarouselGroup11,
+  CarouselGroup12,
+  CarouselGroup13,
+  CarouselGroup14,
 };

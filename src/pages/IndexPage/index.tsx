@@ -25,6 +25,20 @@ import {
   Supplements,
   Techcrunch,
   Yahoo,
+  CarouselGroup1,
+  CarouselGroup2,
+  CarouselGroup3,
+  CarouselGroup4,
+  CarouselGroup5,
+  CarouselGroup6,
+  CarouselGroup7,
+  CarouselGroup8,
+  CarouselGroup9,
+  CarouselGroup10,
+  CarouselGroup11,
+  CarouselGroup12,
+  CarouselGroup13,
+  CarouselGroup14,
 } from "@/assets/svg";
 import ORIZLady from "@/assets/image/ORIZ-Lady.png";
 import HamburgerMenuComponent from "@/components/hamburger-menu";
@@ -50,8 +64,40 @@ const scrollablesFeatures = [
   { title: "Fitness Apparel & Accessories", image: FitnessApparel },
 ];
 
+const carouselGroup = [
+  CarouselGroup1,
+  CarouselGroup2,
+  CarouselGroup3,
+  CarouselGroup4,
+  CarouselGroup5,
+  CarouselGroup6,
+  CarouselGroup7,
+  CarouselGroup8,
+  CarouselGroup9,
+  CarouselGroup10,
+  CarouselGroup11,
+  CarouselGroup12,
+  CarouselGroup13,
+  CarouselGroup14,
+  CarouselGroup1,
+  CarouselGroup2,
+  CarouselGroup3,
+  CarouselGroup4,
+  CarouselGroup5,
+  CarouselGroup6,
+  CarouselGroup7,
+  CarouselGroup8,
+  CarouselGroup9,
+  CarouselGroup10,
+  CarouselGroup11,
+  CarouselGroup12,
+  CarouselGroup13,
+  CarouselGroup14,
+];
+
 const IndexPage = () => {
   const marqueeRef = useRef(null);
+  const phoneCarouselRef = useRef(null);
 
   useEffect(() => {
     const marquee = marqueeRef?.current;
@@ -69,9 +115,25 @@ const IndexPage = () => {
     });
   }, []);
 
+  useEffect(() => {
+    const phoneCarousel = phoneCarouselRef?.current;
+    // @ts-ignore
+    const marqueeWidth = phoneCarousel?.scrollWidth;
+
+    gsap.to(phoneCarousel, {
+      x: -marqueeWidth,
+      duration: 100,
+      ease: "linear",
+      repeat: -1,
+      modifiers: {
+        x: gsap.utils.unitize((x) => parseFloat(x) % marqueeWidth),
+      },
+    });
+  }, []);
+
   return (
     <main>
-      <section className="bg-black">
+      <section className="overflow-hidden bg-black">
         <nav className="mx-auto flex w-11/12 items-center justify-between pt-7 font-jakarta text-white lg:pt-14 2xl:max-w-[1440px]">
           <a href="#">
             <img src="src/assets/svg/oriz-logo.svg" alt="Oriz logo" />
@@ -105,8 +167,8 @@ const IndexPage = () => {
 
         <div className="mx-auto mt-16 grid w-11/12 text-white lg:hidden 2xl:max-w-[1440px]">
           <button className="mb-[33px] flex w-fit items-center gap-x-2 rounded-[333px] border border-[#6C6C6C] bg-[#2A2A2A] px-4 py-3">
-            <span className="bg rounded-[166px] bg-green-100 px-[13px] py-[5px]">New</span>{" "}
-            <span>We’re live across all African Countries</span>
+            <span className="bg rounded-[166px] bg-green-100 px-[13px] py-[5px] text-xs uppercase lg:text-sm">New</span>{" "}
+            <span className="text-xs lg:text-sm">We’re live across all African Countries</span>
             <img src={RightArrowWhite} alt="forward arrow icon" />
           </button>
 
@@ -187,8 +249,8 @@ const IndexPage = () => {
 
         <div className="flex gap-x-5 py-4" ref={marqueeRef}>
           {scrollablesFeatures.map((feature, index) => (
-            <div className="flex items-center gap-x-2 rounded-lg border border-[#ffffff26] bg-[#ffffff26] px-4 py-2.5">
-              <img src={feature.image} alt={feature.title} key={index} />
+            <div className="flex items-center gap-x-2 rounded-lg border border-[#ffffff26] bg-[#ffffff26] px-4 py-2.5" key={index}>
+              <img src={feature.image} alt={feature.title} />
               <p className="truncate font-jakarta text-sm text-white">{feature.title}</p>
             </div>
           ))}
@@ -229,13 +291,13 @@ const IndexPage = () => {
           <img src="src/assets/svg/oriz-banner.svg" className="-ml-[9%] xl:-mt-96" alt="Oriz banner" />
 
           <div className="w-full">
-            <ol className="font-duplicate-sans text-[41px]">
+            <ol className="font-duplicate-sans text-[27px] lg:text-[41px]">
               <li className="border-b border-[#E9E9E9] p-10">
                 <div>
                   <span className="mr-7 text-2xl text-[#ED5E3B]">01</span> Gym plans
                 </div>
 
-                <p className="mt-4 max-w-[450px] font-jakarta text-2xl leading-relaxed text-[#575757]">
+                <p className="mt-4 max-w-[450px] font-jakarta text-base leading-relaxed text-[#575757] md:text-2xl">
                   Discounted gym memberships plan across our partners in Africa.
                 </p>
               </li>
@@ -257,7 +319,7 @@ const IndexPage = () => {
 
         <div className="mt-20 grid items-center lg:grid-cols-[2fr_1fr]">
           <div>
-            <h3 className="max-w-[650px] font-duplicate-sans text-7xl">We’re your partner for a healthier future. </h3>
+            <h3 className="max-w-[650px] font-duplicate-sans text-4xl md:text-7xl">We’re your partner for a healthier future. </h3>
             <p className="mt-10 max-w-[565px] font-jakarta text-xl">
               Prioritise proactive self-care, with our affordable, incentivised health and wellness Solutions
             </p>
@@ -365,17 +427,17 @@ const IndexPage = () => {
         </div>
       </section>
 
-      <section className="overflow-hidden bg-black pb-80 pt-8">
-        <div className="relative mx-auto mt-6 flex w-11/12 justify-between rounded-[49px] border-[4px] border-[#2B2B2B] bg-[#218168] px-12 py-20 2xl:max-w-[1440px]">
+      <section className="overflow-hidden bg-black pb-40 pt-8">
+        <div className="relative mx-auto mt-6 flex w-11/12 justify-between rounded-[49px] border-[4px] border-[#2B2B2B] bg-[#218168] px-8 py-20 md:px-12 2xl:max-w-[1440px]">
           <div>
-            <h3 className="max-w-[452px] font-duplicate-sans text-[53px] leading-tight text-white">Oriz MarketPlace</h3>
+            <h3 className="max-w-[452px] font-duplicate-sans text-4xl leading-tight text-white md:text-[53px]">Oriz MarketPlace</h3>
 
-            <p className="my-[33px] max-w-[455px] font-jakarta text-xl text-white">
+            <p className="my-[33px] max-w-[455px] font-jakarta text-base text-white md:text-xl">
                Take advantage of oriz marketplace to explore and purchase a variety of fitness-related products.
             </p>
 
-            <div className="flex items-center gap-x-6">
-              <button className="flex items-center gap-x-2 rounded-[13px] bg-white px-9 py-[21px]">
+            <div className="flex flex-col gap-6 md:flex-row md:items-center">
+              <button className="flex items-center gap-x-2 rounded-[13px] bg-white px-6 py-[21px] md:px-9">
                 Get Started — For Free! <img src={RightArrow} alt="forward arrow icon" />
               </button>
 
@@ -414,7 +476,13 @@ const IndexPage = () => {
       </section>
 
       <section>
-        <div className="bg-black pb-10 pt-8">
+        <div className="overflow-hidden bg-black pb-10 pt-4">
+          <div className="flex gap-x-5 py-4" ref={phoneCarouselRef}>
+            {carouselGroup.map((feature, index) => (
+              <img src={feature} alt={`Image carousel ${index}`} key={index} />
+            ))}
+          </div>
+
           <div className="mx-auto mt-6 w-11/12 py-20 2xl:max-w-[1440px]">
             <div className="flex items-center justify-between gap-x-2">
               <h3 className="mb-14 font-jakarta text-[27px] text-white lg:text-7xl">Categories of partners</h3>
@@ -422,31 +490,31 @@ const IndexPage = () => {
             </div>
 
             <div className="grid grid-cols-2 gap-5 sm:flex sm:flex-wrap lg:justify-between">
-              <div className="flex w-[195px] items-center justify-center rounded-2xl border-[3px] border-[#FFC501] bg-[#FFDFEB] px-[31px] py-[28px] text-base">
+              <div className="flex items-center justify-center rounded-2xl border-[3px] border-[#FFC501] bg-[#FFDFEB] px-[31px] py-[28px] text-base md:w-[195px]">
                 <p className="text-center">Gym & Spas’</p>
               </div>
-              <div className="flex w-[195px] items-center justify-center rounded-2xl border-[3px] border-[#FFC501] bg-[#FFF3ED] px-[31px] py-[28px] text-base">
+              <div className="flex items-center justify-center rounded-2xl border-[3px] border-[#FFC501] bg-[#FFF3ED] px-[31px] py-[28px] text-base md:w-[195px]">
                 <p className="text-center">
                   Nutrition
                   <br />
                   Experts
                 </p>
               </div>
-              <div className="flex w-[195px] items-center justify-center rounded-2xl border-[3px] border-[#FFC501] bg-[#FFF8E4] px-[31px] py-[28px] text-base">
+              <div className="flex items-center justify-center rounded-2xl border-[3px] border-[#FFC501] bg-[#FFF8E4] px-[31px] py-[28px] text-base md:w-[195px]">
                 <p className="text-center">
                   Health
                   <br />
                   Centres
                 </p>
               </div>
-              <div className="flex w-[195px] items-center justify-center rounded-2xl border-[3px] border-[#FFC501] bg-[#DAEFE3] px-[31px] py-[28px] text-base">
+              <div className="flex items-center justify-center rounded-2xl border-[3px] border-[#FFC501] bg-[#DAEFE3] px-[31px] py-[28px] text-base md:w-[195px]">
                 <p className="text-center">
                   Fitness
                   <br />
                   Centres
                 </p>
               </div>
-              <div className="flex w-[195px] items-center justify-center rounded-2xl border-[3px] border-[#FFC501] bg-[#FFF8E4] px-[31px] py-[28px] text-base">
+              <div className="flex items-center justify-center rounded-2xl border-[3px] border-[#FFC501] bg-[#FFF8E4] px-[31px] py-[28px] text-base md:w-[195px]">
                 <p className="text-center">
                   Health
                   <br />
