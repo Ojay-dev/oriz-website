@@ -1,4 +1,5 @@
 import {
+  Logo,
   AppStore,
   AppStoreBlk,
   AppView,
@@ -39,6 +40,17 @@ import {
   CarouselGroup12,
   CarouselGroup13,
   CarouselGroup14,
+  OrizLady2,
+  OrizLadyMobile2,
+  OrizBanner,
+  OuterFrame2,
+  OuterFrame,
+  WebFrame,
+  OrizPartners,
+  Twitter,
+  Instagram,
+  Linkedin,
+  Telegram,
 } from "@/assets/svg";
 import ORIZLady from "@/assets/image/ORIZ-Lady.png";
 import HamburgerMenuComponent from "@/components/hamburger-menu";
@@ -136,7 +148,7 @@ const IndexPage = () => {
       <section className="overflow-hidden bg-black">
         <nav className="mx-auto flex w-11/12 items-center justify-between pt-7 font-jakarta text-white lg:pt-14 2xl:max-w-[1440px]">
           <a href="#">
-            <img src="src/assets/svg/oriz-logo.svg" alt="Oriz logo" />
+            <img src={Logo} alt="Oriz logo" />
           </a>
 
           <ul className="hidden gap-8 lg:flex">
@@ -282,13 +294,13 @@ const IndexPage = () => {
           </div>
 
           <div className="mt-16 flex justify-center xl:-mr-[9%]">
-            <img src="src/assets/svg/oriz-lady2.svg" alt="Oriz lady" className="hidden xl:block" />
-            <img src="src/assets/svg/oriz-lady2-mobile.svg" alt="Oriz lady" className="w-full xl:hidden" />
+            <img src={OrizLady2} alt="Oriz lady" className="hidden xl:block" />
+            <img src={OrizLadyMobile2} alt="Oriz lady" className="w-full xl:hidden" />
           </div>
         </div>
 
         <div className="flex flex-col-reverse gap-[9%] xl:flex-row">
-          <img src="src/assets/svg/oriz-banner.svg" className="-ml-[9%] xl:-mt-96" alt="Oriz banner" />
+          <img src={OrizBanner} className="-ml-[9%] xl:-mt-96" alt="Oriz banner" />
 
           <div className="w-full">
             <ol className="font-duplicate-sans text-[27px] lg:text-[41px]">
@@ -404,7 +416,7 @@ const IndexPage = () => {
               </button>
             </div>
 
-            <img src="src/assets/svg/outer-frame2.svg" alt="" />
+            <img src={OuterFrame2} alt="" />
           </div>
 
           <div className="h-[735px] overflow-hidden rounded-[50px] border-[5px] bg-[#FFF8E4] px-10 pt-14">
@@ -422,7 +434,7 @@ const IndexPage = () => {
               </button>
             </div>
 
-            <img src="src/assets/svg/outer-frame.svg" alt="" />
+            <img src={OuterFrame} alt="" />
           </div>
         </div>
       </section>
@@ -455,7 +467,7 @@ const IndexPage = () => {
           </div>
 
           <div className="absolute -bottom-80 lg:-right-32">
-            <img src="src/assets/svg/web-frame.svg" alt="" />
+            <img src={WebFrame} alt="" />
           </div>
         </div>
 
@@ -527,7 +539,7 @@ const IndexPage = () => {
 
         <div style={{ background: "linear-gradient(to bottom, black 0%, black 35%, white 35%, white 100%)" }}>
           <div className="mx-auto flex w-11/12 justify-center py-20 pt-6 2xl:max-w-[1440px]">
-            <img src="src/assets/svg/oriz-partners.svg" alt="oriz partners view" className="w-full" />
+            <img src={OrizPartners} alt="oriz partners view" className="w-full" />
           </div>
         </div>
       </section>
@@ -795,22 +807,22 @@ const IndexPage = () => {
               </li>
               <li>
                 <a href="#">
-                  <img src="src/assets/svg/twitter.svg" alt="twitter logo" />
+                  <img src={Twitter} alt="twitter logo" />
                 </a>
               </li>
               <li>
                 <a href="#">
-                  <img src="src/assets/svg/instagram.svg" alt="instagram logo" />
+                  <img src={Instagram} alt="instagram logo" />
                 </a>
               </li>
               <li>
                 <a href="#">
-                  <img src="src/assets/svg/linkedin.svg" alt="linkedin logo" />
+                  <img src={Linkedin} alt="linkedin logo" />
                 </a>
               </li>
               <li>
                 <a href="#">
-                  <img src="src/assets/svg/telegram.svg" alt="telegram logo" />
+                  <img src={Telegram} alt="telegram logo" />
                 </a>
               </li>
             </ul>

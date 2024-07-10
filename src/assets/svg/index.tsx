@@ -9,6 +9,7 @@ import Bloomberg from "./bloomberg.svg";
 import Techcrunch from "./techcrunch.svg";
 import Yahoo from "./yahoo.svg";
 import OrizLady2 from "./oriz-lady2.svg";
+import OrizLadyMobile2 from "./oriz-lady2-mobile.svg";
 import OrizBanner from "./oriz-banner.svg";
 import AppStore from "./app-store.svg";
 import AppStoreBlk from "./app-store-blk.svg";
@@ -64,6 +65,7 @@ export {
   Techcrunch,
   Yahoo,
   OrizLady2,
+  OrizLadyMobile2,
   OrizBanner,
   AppStore,
   AppStoreBlk,
