@@ -52,7 +52,7 @@ import {
   Linkedin,
   Telegram,
 } from "@/assets/svg";
-import ORIZLady from "@/assets/image/ORIZ-Lady.png";
+// import ORIZLady from "@/assets/image/ORIZ-Lady.png";
 import HamburgerMenuComponent from "@/components/hamburger-menu";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
@@ -184,9 +184,22 @@ const IndexPage = () => {
             <img src={RightArrowWhite} alt="forward arrow icon" />
           </button>
 
-          <img src={ORIZLady} alt="A smilling lady" className="mb-10 w-full rounded-[50px]" />
+          {/* <img src={ORIZLady} alt="A smilling lady" className="mb-10 w-full rounded-[50px]" /> */}
 
-          <div>
+          <div className="overflow-hidden rounded-[50px]">
+            <iframe
+              width="100%"
+              height="350"
+              src="https://www.youtube.com/embed/f2Uw0O2iFJ0"
+              title="ORIZ INTERVIEW WITH DAVE"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
+
+          <div className="mt-7">
             <h2 className="font-duplicate-sans text-[35px] leading-tight lg:text-[66px]">
               Personalised plans for your unique{" "}
               <span className="relative">
@@ -246,7 +259,20 @@ const IndexPage = () => {
             </div>
           </div>
 
-          <img src={ORIZLady} alt="A smilling lady" className="ml-auto rounded-[50px]" />
+          {/* <img src={ORIZLady} alt="A smilling lady" className="ml-auto rounded-[50px]" /> */}
+
+          <div className="overflow-hidden rounded-[60px]">
+            <iframe
+              width="100%"
+              height="680"
+              src="https://www.youtube.com/embed/f2Uw0O2iFJ0"
+              title="ORIZ INTERVIEW WITH DAVE"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
         </div>
 
         <div className="mx-auto mt-20 w-11/12 pb-12 2xl:max-w-[1440px]">
