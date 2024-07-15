@@ -1,8 +1,12 @@
 import { useState } from "react";
 import DrawerComponent from "../drawer";
-import { CloseIcon, HamburgerMenu, LogoBlack } from "@/assets/svg";
+import { CloseIcon, HamburgerMenu, HamburgerMenuDark, LogoBlack } from "@/assets/svg";
+import { Link } from "react-router-dom";
 
-const HamburgerMenuComponent = () => {
+type HamburgerMenuProps = {
+  theme?: "dark" | "light";
+};
+const HamburgerMenuComponent = ({ theme }: HamburgerMenuProps) => {
   const [open, setOpen] = useState(false);
 
   const showDrawer = () => {
@@ -16,15 +20,15 @@ const HamburgerMenuComponent = () => {
   return (
     <div className="block lg:hidden">
       <button onClick={showDrawer}>
-        <img src={HamburgerMenu} alt="Hamburger menu" />
+        <img src={theme === "dark" ? HamburgerMenu : HamburgerMenuDark} alt="Hamburger menu" />
       </button>
 
       <DrawerComponent open={open} width={"100%"} onClose={onClose} rootClassName="hamburger-menu">
         <div>
           <div className="flex items-center justify-between">
-            <a href="#">
+            <Link to="/">
               <img src={LogoBlack} alt="Oriz logo" />
-            </a>
+            </Link>
 
             <button onClick={onClose}>
               <img src={CloseIcon} alt="cancel icon" />
@@ -33,10 +37,10 @@ const HamburgerMenuComponent = () => {
 
           <ul className="flex flex-col gap-y-[18px] py-12 font-jakarta text-lg">
             <li>
-              <a href="#">Products</a>
+              <Link to="/products">Products</Link>
             </li>
             <li>
-              <a href="#">Company</a>
+              <Link to="/company">Company</Link>
             </li>
             <li>
               <a href="#">Partners</a>

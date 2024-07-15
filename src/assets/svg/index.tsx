@@ -5,9 +5,13 @@ import RightArrow from "./right-arrow.svg";
 import RightArrowWhite from "./right-arrow-white.svg";
 import AppView from "./app-view.svg";
 import CrunchBase from "./crunchbase.svg";
+import CrunchBaseDark from "./crunchbase-dark.svg";
 import Bloomberg from "./bloomberg.svg";
+import BloombergDark from "./bloomberg-dark.svg";
 import Techcrunch from "./techcrunch.svg";
+import TechcrunchDark from "./techcrunch-dark.svg";
 import Yahoo from "./yahoo.svg";
+import YahooDark from "./yahoo-dark.svg";
 import OrizLady2 from "./oriz-lady2.svg";
 import OrizLadyMobile2 from "./oriz-lady2-mobile.svg";
 import OrizBanner from "./oriz-banner.svg";
@@ -16,6 +20,7 @@ import AppStoreBlk from "./app-store-blk.svg";
 import Playstore from "./playstore.svg";
 import SquiglyLine from "./squigly-line.svg";
 import Multinational from "./multinational.svg";
+import MultinationalPlain from "./multinational-plain.svg";
 import OuterFrame from "./outer-frame.svg";
 import OuterFrame2 from "./outer-frame2.svg";
 import PromoTag from "./promo-code.svg";
@@ -29,13 +34,16 @@ import Linkedin from "./linkedin.svg";
 import Telegram from "./telegram.svg";
 import FooterLogo from "./footer-logo.svg";
 import FooterAppView from "./footer-app-view.svg";
+import ProductAppView from "./product-app-view.svg";
 import HamburgerMenu from "./hamburger-menu.svg";
+import HamburgerMenuDark from "./hamburger-menu-dark.svg";
 import CloseIcon from "./close-x.svg";
 import Dumbell from "./dumbell.svg";
 import Spa from "./spa.svg";
 import Nutrition from "./nutrition.svg";
 import HealthCoaching from "./health-coaching.svg";
 import Organic from "./organic.svg";
+import PlayIcon from "./play-icon.svg";
 import Supplements from "./supplements.svg";
 import QuickOnboarding from "./quick-onboarding.svg";
 import FitnessApparel from "./fitness-apparel.svg";
@@ -61,9 +69,13 @@ export {
   RightArrow,
   AppView,
   CrunchBase,
+  CrunchBaseDark,
   Bloomberg,
+  BloombergDark,
   Techcrunch,
+  TechcrunchDark,
   Yahoo,
+  YahooDark,
   OrizLady2,
   OrizLadyMobile2,
   OrizBanner,
@@ -72,6 +84,7 @@ export {
   Playstore,
   SquiglyLine,
   Multinational,
+  MultinationalPlain,
   OuterFrame,
   OuterFrame2,
   PromoTag,
@@ -85,8 +98,10 @@ export {
   Telegram,
   FooterLogo,
   FooterAppView,
+  ProductAppView,
   RightArrowWhite,
   HamburgerMenu,
+  HamburgerMenuDark,
   CloseIcon,
   Dumbell,
   Spa,
@@ -94,6 +109,7 @@ export {
   HealthCoaching,
   Organic,
   Supplements,
+  PlayIcon,
   QuickOnboarding,
   FitnessApparel,
   CarouselGroup1,

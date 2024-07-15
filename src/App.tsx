@@ -1,9 +1,11 @@
-import { Suspense } from "react";
+import { Suspense, lazy } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AuthProvider from "@/context/AuthContext";
 import IndexPage from "@/pages/IndexPage";
 // import { Private, Public } from "@/pages/AuthenticatedRoute";
 
+const ProductPage = lazy(() => import("@/pages/ProductPage"));
+const CompanyPage = lazy(() => import("@/pages/CompanyPage"));
 // const SignInPage = lazy(() => import("./pages/SignInPage"));
 // const ForgotPasswordPage = lazy(() => import("./pages/ForgotPasswordPage"));
 // const ResetPasswordPage = lazy(() => import("./pages/ResetPasswordPage"));
@@ -14,9 +16,11 @@ const App = () => {
   return (
     <BrowserRouter>
       <AuthProvider>
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<div></div>}>
           <Routes>
             <Route path="/" element={<IndexPage />} />
+            <Route path="/products" element={<ProductPage />} />
+            <Route path="/company" element={<CompanyPage />} />
             {/* <Route path="/signin" element={Public(<SignInPage />)} />
             <Route path="/forgot-password" element={Public(<ForgotPasswordPage />)} />
             <Route path="/reset-password" element={Public(<ResetPasswordPage />)} /> */}
