@@ -6,11 +6,8 @@ import IndexPage from "@/pages/IndexPage";
 
 const ProductPage = lazy(() => import("@/pages/ProductPage"));
 const CompanyPage = lazy(() => import("@/pages/CompanyPage"));
-// const SignInPage = lazy(() => import("./pages/SignInPage"));
-// const ForgotPasswordPage = lazy(() => import("./pages/ForgotPasswordPage"));
-// const ResetPasswordPage = lazy(() => import("./pages/ResetPasswordPage"));
-// const DashboardPage = lazy(() => import("./pages/DashboardPage"));
-// const TalentManagementPage = lazy(() => import("./pages/TalentManagementPage"));
+const StoriesPage = lazy(() => import("@/pages/StoriesPage"));
+const StoryDetailsPage = lazy(() => import("@/pages/StoriesPage/StoryDetails"));
 
 const App = () => {
   return (
@@ -21,6 +18,8 @@ const App = () => {
             <Route path="/" element={<IndexPage />} />
             <Route path="/products" element={<ProductPage />} />
             <Route path="/company" element={<CompanyPage />} />
+            <Route path="/stories" element={<StoriesPage />} />
+            <Route path="/stories/:id" element={<StoryDetailsPage />} />
             {/* <Route path="/signin" element={Public(<SignInPage />)} />
             <Route path="/forgot-password" element={Public(<ForgotPasswordPage />)} />
             <Route path="/reset-password" element={Public(<ResetPasswordPage />)} /> */}

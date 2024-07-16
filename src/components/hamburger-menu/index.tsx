@@ -43,10 +43,10 @@ const HamburgerMenuComponent = ({ theme }: HamburgerMenuProps) => {
               <Link to="/company">Company</Link>
             </li>
             <li>
-              <a href="#">Partners</a>
+              <Link to="/partners">Partners</Link>
             </li>
             <li>
-              <a href="#">Stories</a>
+              <Link to="/stories">Stories</Link>
             </li>
           </ul>
 

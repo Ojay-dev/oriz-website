@@ -44,10 +44,10 @@ const DefaultLayout: React.FC<DefaultLayoutProps> = ({ theme = "light", children
               <Link to="/company">Company</Link>
             </li>
             <li className="text-base font-medium">
-              <a href="#">Partners</a>
+              <Link to="/partners">Partners</Link>
             </li>
             <li className="text-base font-medium">
-              <a href="#">Stories</a>
+              <Link to="/stories">Stories</Link>
             </li>
           </ul>
 
