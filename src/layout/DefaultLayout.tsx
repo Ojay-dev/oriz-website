@@ -13,7 +13,7 @@ import {
   Twitter,
 } from "@/assets/svg";
 import HamburgerMenuComponent from "@/components/hamburger-menu";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 type DefaultLayoutProps = React.PropsWithChildren<{
   theme?: "dark" | "light";
@@ -28,7 +28,7 @@ const DefaultLayout: React.FC<DefaultLayoutProps> = ({ theme = "light", children
 
   return (
     <>
-      <section className={theme === "dark" ? "bg-black" : ""}>
+      <section className={theme === "dark" ? "bg-black" : pathname === "/partners" || pathname === "/company" ? "bg-[#FFF8E4]" : ""}>
         <nav
           className={`mx-auto flex w-11/12 items-center justify-between pt-7 font-jakarta ${theme === "dark" && "text-white"} lg:pt-14 2xl:max-w-[1440px]`}
         >

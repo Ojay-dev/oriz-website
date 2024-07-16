@@ -1,11 +1,7 @@
 import {
-  AppStore,
   AppStoreBlk,
   AppView,
   BackArrow,
-  Bloomberg,
-  CrunchBase,
-  DownArrowYellow,
   Dumbell,
   FitnessApparel,
   HealthCoaching,
@@ -20,8 +16,6 @@ import {
   Spa,
   SquiglyLine,
   Supplements,
-  Techcrunch,
-  Yahoo,
   CarouselGroup1,
   CarouselGroup2,
   CarouselGroup3,
@@ -36,18 +30,23 @@ import {
   CarouselGroup12,
   CarouselGroup13,
   CarouselGroup14,
-  OrizLady2,
-  OrizLadyMobile2,
-  OrizBanner,
   OuterFrame2,
   OuterFrame,
   WebFrame,
-  OrizPartners,
+  YahooDark,
+  BloombergDark,
+  TechcrunchDark,
+  CrunchBaseDark,
+  PlayIcon,
+  MultinationalPlain,
 } from "@/assets/svg";
+
+import VideoImage from "@/assets/image/oseme.png";
+import VideoImage2 from "@/assets/image/VidImg.png";
+import VideoImage3 from "@/assets/image/VidImg2.png";
 
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-
 import DefaultLayout from "@/layout/DefaultLayout";
 
 const scrollablesFeatures = [
@@ -137,21 +136,23 @@ const IndexPage = () => {
   }, []);
 
   return (
-    <DefaultLayout theme="dark">
-      <section className="overflow-hidden bg-black">
+    <DefaultLayout theme="light">
+      <section className="overflow-hidden bg-[#FFF8E4]">
         <div className="mx-auto mt-16 grid w-11/12 text-white lg:hidden 2xl:max-w-[1440px]">
-          <button className="mb-[33px] flex w-fit items-center gap-x-2 rounded-[333px] border border-[#6C6C6C] bg-[#2A2A2A] px-4 py-3">
-            <span className="bg rounded-[166px] bg-green-100 px-[13px] py-[5px] text-xs uppercase lg:text-sm">New</span>{" "}
-            <span className="text-xs lg:text-sm">We’re live across all African Countries</span>
-            <img src={RightArrowWhite} alt="forward arrow icon" />
-          </button>
+          <div className="mx-auto w-11/12 2xl:max-w-[1440px]">
+            <button className="mb-[33px] flex w-fit items-center gap-x-2 rounded-[333px] border border-[#6C6C6C] bg-[#F0F0F0] px-4 py-3">
+              <span className="bg rounded-[166px] bg-green-100 px-[13px] py-[5px] text-xs uppercase lg:text-sm">New</span>{" "}
+              <span className="text-xs text-black lg:text-sm">We’re live across all African Countries</span>
+              <img src={RightArrowWhite} alt="forward arrow icon" />
+            </button>
+          </div>
 
           {/* <img src={ORIZLady} alt="A smilling lady" className="mb-10 w-full rounded-[50px]" /> */}
 
-          <div className="overflow-hidden rounded-[50px]">
+          <div className="overflow-hidden rounded-[60px]">
             <iframe
               width="100%"
-              height="350"
+              height="680"
               src="https://www.youtube.com/embed/f2Uw0O2iFJ0"
               title="ORIZ INTERVIEW WITH DAVE"
               frameBorder="0"
@@ -161,18 +162,17 @@ const IndexPage = () => {
             ></iframe>
           </div>
 
-          <div className="mt-7">
-            <h2 className="font-duplicate-sans text-[35px] leading-tight lg:text-[66px]">
-              Personalised plans for your unique{" "}
+          <div className="mx-auto mt-7 w-11/12 2xl:max-w-[1440px]">
+            <h2 className="font-duplicate-sans text-[35px] leading-tight text-[#050505] lg:text-[66px]">
+              The Best way to maintain a Healthy{" "}
               <span className="relative">
-                wellness
-                <span className="absolute -bottom-2.5 left-0 hidden lg:block">
+                lIfestyle
+                <span className="absolute -bottom-3 left-0 hidden lg:block">
                   <img src={SquiglyLine} alt="Squigly line" />
                 </span>
               </span>{" "}
-              Journey
             </h2>
-            <p className="my-8 font-jakarta text-base leading-10">
+            <p className="my-8 font-jakarta text-base leading-10 text-[#050505]">
               ORIZ is a solution for your health and wellness journey, providing you with personalized tools and benefits to help you lead a
               healthier life.
             </p>
@@ -189,35 +189,33 @@ const IndexPage = () => {
           </div>
         </div>
 
-        <div className="mx-auto mt-16 hidden w-11/12 grid-cols-2 items-center text-white lg:grid 2xl:max-w-[1440px]">
+        <div className="mx-auto mt-16 hidden w-11/12 grid-cols-2 items-center gap-x-10 text-white lg:grid 2xl:max-w-[1440px]">
           <div>
-            <button className="mb-[33px] flex items-center gap-x-2 rounded-[333px] border border-[#6C6C6C] bg-[#2A2A2A] px-4 py-3">
-              <span className="bg rounded-[166px] bg-green-100 px-[13px] py-[5px]">New</span>{" "}
-              <span>We’re live across all African Countries</span>
+            <button className="mb-[33px] flex items-center gap-x-2 rounded-[333px] border border-[#218068] bg-[#218068] px-4 py-3">
+              <span className="bg rounded-[166px] bg-[#FFC501] px-[13px] py-[5px] uppercase text-black">New</span>{" "}
+              <span className="text-white">See what’s new!</span>
               <img src={RightArrowWhite} alt="forward arrow icon" />
             </button>
 
-            <h2 className="max-w-[600px] font-duplicate-sans text-[66px] leading-tight">
-              Personalised plans for your unique{" "}
+            <h2 className="max-w-[600px] font-duplicate-sans text-[66px] leading-tight text-[#050505]">
+              Revolutionising Wellness through{" "}
               <span className="relative">
-                wellness
-                <span className="absolute -bottom-2.5 left-0">
+                Partnership
+                <span className="absolute -bottom-3 left-0">
                   <img src={SquiglyLine} alt="Squigly line" />
                 </span>
-              </span>{" "}
-              Journey
+              </span>
             </h2>
-            <p className="my-8 max-w-[400px] font-jakarta text-base leading-10">
-              ORIZ is a solution for your health and wellness journey, providing you with personalized tools and benefits to help you lead a
-              healthier life.
+            <p className="my-8 max-w-[400px] font-jakarta text-base leading-7 text-[#050505]">
+              Be a part of an ecosystem that covers the kind of customers that you seek.
             </p>
 
-            <div className="flex gap-x-6">
-              <button className="rounded-xl bg-green-100 px-9 py-5 text-base">
-                <span className="font-medium">Use Oriz AI</span> — For Free!{" "}
+            <div className="flex flex-col gap-x-6 gap-y-4 lg:mr-4 lg:flex-row">
+              <button className="rounded-xl bg-[#218068] px-9 py-5 text-base text-white">
+                <span className="font-medium">Get Started</span> — For Free!{" "}
               </button>
 
-              <button className="rounded-xl bg-white px-9 text-base text-black">Learn More</button>
+              <button className="ck flex items-center justify-center rounded-xl bg-black px-9 text-base text-white">Learn More</button>
             </div>
           </div>
 
@@ -238,86 +236,119 @@ const IndexPage = () => {
         </div>
 
         <div className="mx-auto mt-20 w-11/12 pb-12 2xl:max-w-[1440px]">
-          <h4 className="mb-7 text-pitch-white">Featured on</h4>
+          <h4 className="mb-7 text-black">Featured on</h4>
           <div className="flex flex-wrap justify-between gap-[42px]">
-            <img src={Yahoo} alt="Yahoo logo" className="w-[40%] lg:w-[unset]" />
-            <img src={Bloomberg} alt="Bloomberg logo" className="w-[40%] lg:w-[unset]" />
-            <img src={Techcrunch} alt="Techcrunch logo" className="w-[40%] lg:w-[unset]" />
-            <img src={CrunchBase} alt="CrunchBase logo" className="w-[40%] lg:w-[unset]" />
+            <img src={YahooDark} alt="Yahoo logo" className="w-[40%] lg:w-[unset]" />
+            <img src={BloombergDark} alt="Bloomberg logo" className="w-[40%] lg:w-[unset]" />
+            <img src={TechcrunchDark} alt="Techcrunch logo" className="w-[40%] lg:w-[unset]" />
+            <img src={CrunchBaseDark} alt="CrunchBase logo" className="w-[40%] lg:w-[unset]" />
           </div>
         </div>
 
-        <div className="flex gap-x-5 py-4" ref={marqueeRef}>
-          {scrollablesFeatures.map((feature, index) => (
-            <div className="flex items-center gap-x-2 rounded-lg border border-[#ffffff26] bg-[#ffffff26] px-4 py-2.5" key={index}>
-              <img src={feature.image} alt={feature.title} />
-              <p className="truncate font-jakarta text-sm text-white">{feature.title}</p>
-            </div>
-          ))}
+        <div className="bg-black">
+          <div className="flex gap-x-5 py-4" ref={marqueeRef}>
+            {scrollablesFeatures.map((feature, index) => (
+              <div className="flex items-center gap-x-2 rounded-lg border border-[#ffffff26] bg-[#ffffff26] px-4 py-2.5" key={index}>
+                <img src={feature.image} alt={feature.title} />
+                <p className="truncate font-jakarta text-sm text-white">{feature.title}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      <section className="mx-auto mt-28 w-11/12 2xl:max-w-[1440px] 2xl:overflow-hidden">
-        <div className="flex flex-col justify-between xl:flex-row">
-          <div className="">
-            <h3 className="font-duplicate-sans text-4xl leading-tight text-pitch-white lg:text-[66px] xl:max-w-[500px]">
-              We are trusted by <span className="text-[#ED5E3B]">a community</span> of <br />
-              <span className="text-black">1 Million+</span> Africans
-            </h3>
+      <section className="bg-white py-28">
+        <div className="mx-auto w-11/12 2xl:max-w-[1440px]">
+          <div className="mb-14 flex flex-col justify-between gap-y-5 lg:flex-row lg:items-end">
+            <div>
+              <h3 className="font-duplicate-sans text-[35px] lg:text-[65px]">Benefits of Choosing Oriz</h3>
 
-            <p className="mt-8 text-xl leading-loose xl:max-w-[480px]">
-              We help you build a healthy lifestyle using an incentivised reward called ORIZ tokens — redeemable for discounts and benefits.
-            </p>
+              <p className="font-jakarta text-base leading-loose lg:max-w-[518px] lg:text-[20px]">
+                Partner with OrizTech to unlock your business to the world, grow and be more visible to your users.
+              </p>
+            </div>
 
-            <div className="mt-12 flex flex-col gap-x-5 gap-y-4 lg:flex-row">
-              <button className="flex items-center gap-x-2 rounded-xl bg-black px-8 py-5 text-base text-white">
-                <img src={Playstore} alt="Play store icon" />
-                Get on Google Play
-              </button>
-
-              <button className="flex items-center gap-x-2 rounded-xl bg-black px-8 py-5 text-base text-white">
-                <img src={AppStore} alt="app store icon" /> Get on App Store
+            <div className="flex flex-col gap-x-6 gap-y-4 lg:mr-4 lg:flex-row">
+              <button className="rounded-xl bg-[#218068] px-9 py-5 text-base text-white">
+                <span className="font-medium">Get Started</span> — For Free!{" "}
               </button>
             </div>
           </div>
 
-          <div className="mt-16 flex justify-center xl:-mr-[9%]">
-            <img src={OrizLady2} alt="Oriz lady" className="hidden xl:block" />
-            <img src={OrizLadyMobile2} alt="Oriz lady" className="w-full xl:hidden" />
+          <div className="relative mt-6 flex max-h-[750px] flex-col justify-between gap-x-8 overflow-hidden rounded-[49px] border-[4px] border-[#000000] bg-[#195D4C] px-8 py-20 md:px-12 lg:h-[650px] lg:max-h-[1000px] lg:flex-row">
+            <div>
+              <h3 className="font-duplicate-sans text-4xl leading-tight text-white lg:max-w-[452px] lg:text-[53px]">
+                Generate extra revenue
+              </h3>
+
+              <p className="my-[33px] font-jakarta text-xl text-white lg:max-w-[600px]">
+                Leverage our platform to create additional revenue opportunities for your business.
+              </p>
+
+              <button className="mt-16 flex items-center gap-x-1 rounded-[13px] bg-black px-9 py-[21px] text-white">
+                Get Started — For Free! <img src={RightArrow} alt="forward arrow icon" />
+              </button>
+            </div>
+
+            <div className="absolute -bottom-56 right-0 w-full xl:w-[unset]">
+              <img src={WebFrame} alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto mt-10 w-11/12 2xl:max-w-[1440px] 2xl:overflow-hidden">
+        <div className="mt-20">
+          <div className="flex flex-col items-center">
+            <h3 className="font-duplicate-sans text-5xl text-[#BCC1C8] lg:text-7xl">Join the network</h3>
+            <p className="textxl max-w-[800px] py-3 text-center font-light leading-relaxed lg:text-3xl">
+              We help you build a healthy lifestyle and reward you with blockchain rewards and other incentives.
+            </p>
           </div>
         </div>
 
-        <div className="flex flex-col-reverse gap-[9%] xl:flex-row">
-          <img src={OrizBanner} className="-ml-[9%] xl:-mt-96" alt="Oriz banner" />
+        <div className="mt-5 flex h-[674px] gap-x-12">
+          <div className="relative max-w-[633px] overflow-hidden rounded-[20px]">
+            <img src={VideoImage} alt="" className="h-full w-full object-cover" />
 
-          <div className="w-full">
-            <ol className="font-duplicate-sans text-[27px] lg:text-[41px]">
-              <li className="border-b border-[#E9E9E9] p-10">
-                <div>
-                  <span className="mr-7 text-2xl text-[#ED5E3B]">01</span> Gym plans
-                </div>
+            <button className="absolute bottom-1/2 left-1/2 flex h-[118px] w-[118px] -translate-x-1/2 translate-y-1/2 transform items-center justify-center rounded-full bg-[#d9d9d924] backdrop-blur-md backdrop-filter">
+              <img src={PlayIcon} alt="play icon" />
+            </button>
 
-                <p className="mt-4 max-w-[450px] font-jakarta text-base leading-relaxed text-[#575757] md:text-2xl">
-                  Discounted gym memberships plan across our partners in Africa.
-                </p>
-              </li>
+            <div className="absolute bottom-10 left-5 md:left-10">
+              <span className="font-jakarta text-[45px] font-extrabold text-white">Oseme Pearl</span>
+              <p className="text-[25px] text-white">CEO The White Pearl</p>
+            </div>
+          </div>
 
-              <li className="border-b border-[#E9E9E9] p-10">
-                <span className="mr-7 text-2xl text-[#B9B9B9]">02</span> Meals Plan
-              </li>
+          <div className="relative hidden max-w-[305px] overflow-hidden rounded-[20px] md:block">
+            <img src={VideoImage2} alt="" className="h-full w-full object-cover" />
 
-              <li className="border-b border-[#E9E9E9] p-10">
-                <span className="mr-7 text-2xl text-[#B9B9B9]">03</span> Ai Integration
-              </li>
+            {/* <button className="absolute bottom-1/2 left-1/2 flex h-[118px] w-[118px] -translate-x-1/2 translate-y-1/2 transform items-center justify-center rounded-full bg-[#d9d9d924] backdrop-blur-md backdrop-filter">
+              <img src={PlayIcon} alt="play icon" />
+            </button>
 
-              <li className="border-b border-[#E9E9E9] p-10">
-                <span className="mr-7 text-2xl text-[#B9B9B9]">04</span> Tokenize Rewards
-              </li>
-            </ol>
+            <div className="absolute bottom-10 left-10">
+              <span className="font-jakarta text-[45px] font-extrabold text-white">Oseme Pearl</span>
+              <p className="text-[25px] text-white">CEO The White Pearl</p>
+            </div> */}
+          </div>
+
+          <div className="relative hidden max-w-[305px] overflow-hidden rounded-[20px] lg:block">
+            <img src={VideoImage3} alt="" className="h-full w-full object-cover" />
+
+            {/* <button className="absolute bottom-1/2 left-1/2 flex h-[118px] w-[118px] -translate-x-1/2 translate-y-1/2 transform items-center justify-center rounded-full bg-[#d9d9d924] backdrop-blur-md backdrop-filter">
+              <img src={PlayIcon} alt="play icon" />
+            </button>
+
+            <div className="absolute bottom-10 left-10">
+              <span className="font-jakarta text-[45px] font-extrabold text-white">Oseme Pearl</span>
+              <p className="text-[25px] text-white">CEO The White Pearl</p>
+            </div> */}
           </div>
         </div>
 
-        <div className="mt-20 grid items-center lg:grid-cols-[2fr_1fr]">
+        <div className="mt-10 grid items-center lg:mt-[unset] lg:grid-cols-[2fr_1fr]">
           <div>
             <h3 className="max-w-[650px] font-duplicate-sans text-4xl md:text-7xl">We’re your partner for a healthier future. </h3>
             <p className="mt-10 max-w-[565px] font-jakarta text-xl">
@@ -349,13 +380,13 @@ const IndexPage = () => {
             </div>
           </div>
 
-          <div className="mt-6 flex max-h-[750px] flex-col justify-between gap-x-8 overflow-hidden rounded-[49px] border-[4px] border-[#000000] bg-[#195D4C] px-8 py-20 md:px-12 lg:h-[650px] lg:max-h-[1000px] lg:flex-row">
+          <div className="mt-6 flex max-h-[700px] flex-col justify-between gap-x-8 overflow-hidden rounded-[49px] border-[4px] border-[#000000] bg-[#195D4C] px-6 py-20 lg:h-[650px] lg:max-h-[1000px] lg:flex-row lg:px-12">
             <div>
               <h3 className="font-duplicate-sans text-4xl leading-tight text-white lg:max-w-[452px] lg:text-[53px]">
                 Access to health, Fitness & wellness options
               </h3>
 
-              <p className="my-[33px] font-jakarta text-xl text-white lg:max-w-[455px]">
+              <p className="my-[33px] font-jakarta text-base text-white lg:max-w-[455px] lg:text-xl">
                 Our  plans allows you to access various gyms, fitness programs, wellness centers, and healthy nutritional options,  all over
                 the globe.
               </p>
@@ -385,21 +416,21 @@ const IndexPage = () => {
         </div>
       </section>
 
-      <section className="mt-8" style={{ background: "linear-gradient(to bottom, white 0%, white 35%, black 35%, black 100%)" }}>
+      <section className="mt-8" style={{ background: "linear-gradient(to bottom, white 0%, white 35%, #195D4C 35%, #195D4C 100%)" }}>
         <div className="mx-auto grid w-11/12 gap-8 xl:grid-cols-2 2xl:max-w-[1440px]">
-          <div className="h-[735px] overflow-hidden rounded-[50px] border-[5px] bg-[#FF884D] px-8 pt-14 lg:px-10">
-            <h3 className="mb-6 max-w-[254px] font-duplicate-sans text-4xl text-white lg:text-5xl">Join our Community</h3>
-            <p className="max-w-[420px] font-jakarta text-white">
+          <div className="h-[735px] overflow-hidden rounded-[50px] border-[5px] bg-[#FFC501] px-6 pt-14 lg:px-10">
+            <h3 className="mb-6 font-duplicate-sans text-4xl text-black md:max-w-[254px] lg:text-5xl">join our Community</h3>
+            <p className="max-w-[420px] font-jakarta text-black">
               Connect with like-minded individuals, fitness enthusiasts, and experts in our thriving community.
             </p>
 
             <div className="mt-8 flex flex-col gap-x-5 gap-y-3 xl:flex-row">
-              <button className="flex items-center gap-x-2 rounded-xl bg-white px-8 py-[18px] text-base">
+              <button className="flex items-center justify-center gap-x-2 rounded-xl bg-white px-8 py-[18px] text-base md:justify-start">
                 <img src={Playstore} alt="Play store icon" />
                 Get on Google Play
               </button>
 
-              <button className="flex items-center gap-x-2 rounded-xl bg-white px-8 py-[18px] text-base">
+              <button className="flex items-center justify-center gap-x-2 rounded-xl bg-white px-8 py-[18px] text-base md:justify-start">
                 <img src={AppStoreBlk} alt="app store icon" /> Get on App Store
               </button>
             </div>
@@ -407,18 +438,20 @@ const IndexPage = () => {
             <img src={OuterFrame2} alt="" />
           </div>
 
-          <div className="h-[735px] overflow-hidden rounded-[50px] border-[5px] bg-[#FFF8E4] px-8 pt-14 lg:px-10">
-            <h3 className="mb-6 max-w-[254px] font-duplicate-sans text-4xl lg:text-5xl">Tokenized Rewards</h3>
-            <p className="max-w-[420px] font-jakarta">Earn ORIZ tokens for healthy activities, redeemable for discounts and benefits.</p>
+          <div className="h-[735px] overflow-hidden rounded-[50px] border-[5px] bg-[#BD4355] px-6 pt-14 lg:px-10">
+            <h3 className="mb-6 max-w-[254px] font-duplicate-sans text-4xl text-white lg:text-5xl">Tokenized Rewards</h3>
+            <p className="max-w-[420px] font-jakarta text-white">
+              Earn ORIZ tokens for healthy activities, redeemable for discounts and benefits.
+            </p>
 
             <div className="mt-8 flex flex-col gap-x-5 gap-y-3 xl:flex-row">
-              <button className="flex items-center gap-x-2 rounded-xl bg-black px-8 py-[18px] text-base text-white">
+              <button className="flex items-center justify-center gap-x-2 rounded-xl bg-white px-8 py-[18px] text-base lg:justify-start">
                 <img src={Playstore} alt="Play store icon" />
                 Get on Google Play
               </button>
 
-              <button className="flex items-center gap-x-2 rounded-xl bg-black px-8 py-[18px] text-base text-white">
-                <img src={AppStore} alt="app store icon" /> Get on App Store
+              <button className="flex items-center justify-center gap-x-2 rounded-xl bg-white px-8 py-[18px] text-base lg:justify-start">
+                <img src={AppStoreBlk} alt="app store icon" /> Get on App Store
               </button>
             </div>
 
@@ -427,8 +460,8 @@ const IndexPage = () => {
         </div>
       </section>
 
-      <section className="overflow-hidden bg-black pb-40 pt-8">
-        <div className="relative mx-auto mt-6 flex w-11/12 justify-between rounded-[49px] border-[4px] border-[#2B2B2B] bg-[#218168] px-8 py-20 md:px-12 2xl:max-w-[1440px]">
+      <section className="overflow-hidden bg-[#195D4C] pb-40 pt-8">
+        <div className="relative mx-auto mt-6 flex w-11/12 justify-between rounded-[49px] border-[4px] border-[#2B2B2B] bg-black px-8 py-20 md:px-12 2xl:max-w-[1440px]">
           <div>
             <h3 className="max-w-[452px] font-duplicate-sans text-4xl leading-tight text-white md:text-[53px]">Oriz MarketPlace</h3>
 
@@ -448,8 +481,9 @@ const IndexPage = () => {
 
             <div className="mt-8 flex">
               <img src={PromoTag} alt="Promo Tag icon" />
-              <p className="max-w-[297px] font-jakarta text-base text-white">
-                Up-to 15% exclusive discounts on healthcare services, gym memberships, wearables, and more!
+              <p className="max-w-[350px] font-jakarta text-base text-white">
+                Up-to <span className="text-[#FFC501]">15% exclusive discounts</span> on healthcare services, gym memberships, wearables,
+                and more!
               </p>
             </div>
           </div>
@@ -476,94 +510,24 @@ const IndexPage = () => {
       </section>
 
       <section>
-        <div className="overflow-hidden bg-black pb-10 pt-4">
+        <div className="overflow-hidden bg-[#195D4C] pb-10 pt-4">
           <div className="flex gap-x-5 py-4" ref={phoneCarouselRef}>
             {carouselGroup.map((feature, index) => (
               <img src={feature} alt={`Image carousel ${index}`} key={index} />
             ))}
           </div>
-
-          <div className="mx-auto mt-6 w-11/12 py-20 2xl:max-w-[1440px]">
-            <div className="flex items-center justify-between gap-x-2">
-              <h3 className="mb-14 font-jakarta text-[27px] text-white lg:text-7xl">Categories of partners</h3>
-              <img src={DownArrowYellow} alt="down arrow icon" />
-            </div>
-
-            <div className="grid grid-cols-2 gap-5 sm:flex sm:flex-wrap lg:justify-between">
-              <div className="flex items-center justify-center rounded-2xl border-[3px] border-[#FFC501] bg-[#FFDFEB] px-[31px] py-[28px] text-base md:w-[195px]">
-                <p className="text-center">Gym & Spas’</p>
-              </div>
-              <div className="flex items-center justify-center rounded-2xl border-[3px] border-[#FFC501] bg-[#FFF3ED] px-[31px] py-[28px] text-base md:w-[195px]">
-                <p className="text-center">
-                  Nutrition
-                  <br />
-                  Experts
-                </p>
-              </div>
-              <div className="flex items-center justify-center rounded-2xl border-[3px] border-[#FFC501] bg-[#FFF8E4] px-[31px] py-[28px] text-base md:w-[195px]">
-                <p className="text-center">
-                  Health
-                  <br />
-                  Centres
-                </p>
-              </div>
-              <div className="flex items-center justify-center rounded-2xl border-[3px] border-[#FFC501] bg-[#DAEFE3] px-[31px] py-[28px] text-base md:w-[195px]">
-                <p className="text-center">
-                  Fitness
-                  <br />
-                  Centres
-                </p>
-              </div>
-              <div className="flex items-center justify-center rounded-2xl border-[3px] border-[#FFC501] bg-[#FFF8E4] px-[31px] py-[28px] text-base md:w-[195px]">
-                <p className="text-center">
-                  Health
-                  <br />
-                  Coach
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div style={{ background: "linear-gradient(to bottom, black 0%, black 35%, white 35%, white 100%)" }}>
-          <div className="mx-auto flex w-11/12 justify-center py-20 pt-6 2xl:max-w-[1440px]">
-            <img src={OrizPartners} alt="oriz partners view" className="w-full" />
-          </div>
         </div>
       </section>
 
-      <section>
-        <div className="mx-auto w-11/12 lg:w-full 2xl:max-w-[1440px]">
-          <div className="flex flex-col justify-between gap-y-5 lg:flex-row lg:items-end">
-            <div className="lg:ml-[15%]">
-              <h3 className="font-duplicate-sans text-[35px] text-[#BCC1C8] lg:text-[65px]">Join the network</h3>
-              <p className="font-jakarta text-base lg:max-w-[518px] lg:text-[24px]">
-                We help you build a healthy lifestyle and reward you with blockchain rewards and other incentives.{" "}
-              </p>
-            </div>
-
-            <div className="flex flex-col gap-x-6 gap-y-4 lg:mr-4 lg:flex-row">
-              <button className="rounded-xl bg-[#252525] px-9 py-5 text-base text-white">
-                <span className="font-medium">Use Oriz AI</span> — For Free!{" "}
-              </button>
-
-              <button className="flex h-[50px] items-center justify-center rounded-xl bg-green-100 px-9 text-base text-white lg:bg-[#F0F0F0] lg:text-black">
-                Learn More
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="pb-28 pt-52" style={{ background: "linear-gradient(to bottom, white 0%, white 45%, #0C513F 45%, #0C513F 100%)" }}>
+      <section className="pb-56 pt-44" style={{ background: "linear-gradient(to bottom, #195D4C 0%, #195D4C 45%, white 45%, white 100%)" }}>
         <div className="mx-auto grid w-11/12 items-center justify-items-center gap-y-20 xl:grid-cols-3 2xl:max-w-[1440px]">
-          <div className="relative w-fit rounded-[25px] border-[4px] border-black bg-white px-[50px] pb-[54px] pt-[58px]">
+          <div className="relative w-[90%] rounded-[25px] border-[4px] border-black bg-white px-9 pb-[54px] pt-[58px] lg:w-fit lg:px-[50px]">
             <span className="absolute -top-6 left-1/2 -translate-x-1/2 transform rounded-[9px] border-[4px] bg-[#FFC501] px-4 py-1.5">
               Basic Plan
             </span>
             <h4 className="font-duplicate-sans text-[83px] text-[#218068]">$19.99</h4>
 
-            <ul className="max-w-[278px] font-jakarta text-[13px]">
+            <ul className="font-jakarta text-[13px] lg:max-w-[278px]">
               <li className="mb-3 border-b-[0.21px] border-black pb-[10px]">
                 Access to basic features and functionalities of the ORIZ platform
               </li>
@@ -585,13 +549,13 @@ const IndexPage = () => {
             </button>
           </div>
 
-          <div className="relative w-fit rounded-[25px] border-[4px] border-black bg-white px-[50px] pb-[54px] pt-[58px]">
+          <div className="relative w-[90%] rounded-[25px] border-[4px] border-black bg-white px-9 pb-[54px] pt-[58px] lg:w-fit lg:px-[50px]">
             <span className="absolute -top-6 left-1/2 -translate-x-1/2 transform rounded-[9px] border-[4px] bg-[#FFC501] px-4 py-1.5">
               Premium Plan
             </span>
             <h4 className="font-duplicate-sans text-[83px] text-[#218068]">$29.99</h4>
 
-            <ul className="max-w-[278px] font-jakarta text-[13px]">
+            <ul className="font-jakarta text-[13px] lg:max-w-[278px]">
               <li className="mb-3 border-b-[0.21px] border-black pb-[10px]">All features included in the Basic Plan</li>
               <li className="mb-3 border-b-[0.21px] border-black pb-[10px]">
                 Advanced data analytics and insights for deeper understanding of personal health trends
@@ -612,13 +576,13 @@ const IndexPage = () => {
             </button>
           </div>
 
-          <div className="relative w-fit rounded-[25px] border-[4px] border-black bg-white px-[50px] pb-[54px] pt-[58px]">
+          <div className="relative w-[90%] rounded-[25px] border-[4px] border-black bg-white px-9 pb-[54px] pt-[58px] lg:w-fit lg:px-[50px]">
             <span className="absolute -top-6 left-1/2 -translate-x-1/2 transform rounded-[9px] border-[4px] bg-[#FFC501] px-4 py-1.5">
               Platnium Plan
             </span>
             <h4 className="font-duplicate-sans text-[83px] text-[#218068]">$39.99</h4>
 
-            <ul className="max-w-[278px] font-jakarta text-[13px]">
+            <ul className="font-jakarta text-[13px] lg:max-w-[278px]">
               <li className="mb-3 border-b-[0.21px] border-black pb-[10px]">All features included in the Premium Plan</li>
               <li className="mb-3 border-b-[0.21px] border-black pb-[10px]">Insurance cover basic ( Designed by Team )</li>
               <li className="mb-3 border-b-[0.21px] border-black pb-[10px]">Gym 3 times weekly</li>
@@ -631,6 +595,36 @@ const IndexPage = () => {
             <button className="mt-9 h-[59px] w-full rounded-3xl bg-black font-duplicate-sans text-[25px] font-semibold text-white">
               Subscribe — <span className="font-duplicate-sans-regular text-base">Monthly</span>
             </button>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto mt-10 w-11/12 2xl:max-w-[1440px] 2xl:overflow-hidden">
+        <div className="grid items-center gap-x-[10%] rounded-[61px] bg-[#151515] px-6 py-16 text-white lg:grid-cols-[1.5fr_1fr] lg:px-20">
+          <div>
+            <h3 className="max-w-[650px] font-duplicate-sans text-4xl md:text-7xl">We’re your partner for a healthier future. </h3>
+
+            <div className="mt-7 lg:w-[80%]">
+              <div className="mb-6 grid gap-4 md:grid-cols-2">
+                <input
+                  type="text"
+                  placeholder="First Name"
+                  className="rounded-2xl border border-white bg-[#1d1c1c4d] px-[28px] py-[18px]"
+                />
+
+                <input
+                  type="text"
+                  placeholder="First Name"
+                  className="rounded-2xl border border-white bg-[#1d1c1c4d] px-[28px] py-[18px]"
+                />
+              </div>
+
+              <button className="w-full rounded-xl bg-white px-10 py-6 text-base text-black">Subscribe</button>
+            </div>
+          </div>
+
+          <div className="mt-[50px] flex justify-center lg:justify-start">
+            <img src={MultinationalPlain} alt="" />
           </div>
         </div>
       </section>

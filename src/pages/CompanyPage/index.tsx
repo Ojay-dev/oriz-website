@@ -1,21 +1,13 @@
 import {
   AppStore,
-  AppStoreBlk,
-  AppView,
-  BackArrow,
   Dumbell,
   FitnessApparel,
   HealthCoaching,
-  Multinational,
   Nutrition,
   Organic,
   Playstore,
-  PromoTag,
   QuickOnboarding,
-  RightArrow,
-  RightArrowWhite,
   Spa,
-  SquiglyLine,
   Supplements,
   CarouselGroup1,
   CarouselGroup2,
@@ -31,25 +23,13 @@ import {
   CarouselGroup12,
   CarouselGroup13,
   CarouselGroup14,
-  OrizLady2,
-  OrizLadyMobile2,
-  OrizBanner,
-  OuterFrame2,
-  OuterFrame,
-  WebFrame,
-  OrizPartners,
   YahooDark,
   BloombergDark,
   TechcrunchDark,
   CrunchBaseDark,
-  ProductAppView,
   PlayIcon,
   MultinationalPlain,
 } from "@/assets/svg";
-
-import VideoImage from "@/assets/image/oseme.png";
-import VideoImage2 from "@/assets/image/VidImg.png";
-import VideoImage3 from "@/assets/image/VidImg2.png";
 
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
@@ -155,10 +135,10 @@ const IndexPage = () => {
 
   return (
     <DefaultLayout theme="light">
-      <section className="overflow-hidden">
+      <section className="overflow-hidden bg-[#FFF8E4]">
         <div className="mt-16 flex gap-x-[43px] overflow-x-auto" ref={scrollContainerRef}>
           {Array.from({ length: 4 }).map((_, index) => (
-            <div className="relative h-[640px] w-[534px] flex-shrink-0 rounded-[63px] bg-[#1A1A1A]" key={index}>
+            <div className="relative h-[320px] w-[350px] flex-shrink-0 rounded-[63px] bg-[#1A1A1A] lg:h-[640px] lg:w-[534px]" key={index}>
               <button className="absolute bottom-1/2 left-1/2 flex h-[88px] w-[88px] -translate-x-1/2 translate-y-1/2 transform items-center justify-center rounded-full bg-[#d9d9d924] backdrop-blur-md backdrop-filter">
                 <img src={PlayIcon} alt="play icon" />
               </button>
@@ -188,7 +168,7 @@ const IndexPage = () => {
         </div>
       </section>
 
-      <section className="mx-auto w-11/12 py-28 2xl:max-w-[1440px]">
+      <section className="mx-auto w-11/12 py-16 lg:py-28 2xl:max-w-[1440px]">
         <div className="flex flex-col items-center gap-y-8">
           <h3 className="max-w-6xl text-center font-duplicate-sans text-[35px] leading-tight lg:text-[65px]">
             We’re inspiring a global community to prioritise proactive self-care
@@ -199,21 +179,21 @@ const IndexPage = () => {
             blockchain
           </p>
 
-          <div className="relative h-[640px] w-4/5 flex-shrink-0 rounded-[63px] bg-[#1A1A1A]">
+          <div className="relative h-[320px] w-full flex-shrink-0 rounded-[63px] bg-[#1A1A1A] lg:h-[640px] lg:w-4/5">
             <button className="absolute bottom-1/2 left-1/2 flex h-[88px] w-[88px] -translate-x-1/2 translate-y-1/2 transform items-center justify-center rounded-full bg-[#d9d9d924] backdrop-blur-md backdrop-filter">
               <img src={PlayIcon} alt="play icon" />
             </button>
 
             <div className="absolute bottom-10 left-10 md:left-10">
-              <span className="font-jakarta text-[45px] font-extrabold text-white">Dave Obada</span>
-              <p className="text-[22px] text-white">CEO, Founder</p>
+              <span className="font-jakarta text-base font-extrabold text-white lg:text-[45px]">Dave Obada</span>
+              <p className="text-sm text-white lg:text-[22px]">CEO, Founder</p>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="mt-10 2xl:overflow-hidden">
-        <div className="mx-auto flex w-11/12 items-end justify-between gap-x-10 2xl:max-w-[1440px]">
+      <section className="mt-5 lg:mt-10 2xl:overflow-hidden">
+        <div className="mx-auto flex w-11/12 flex-col items-end justify-between gap-x-10 gap-y-5 lg:flex-row 2xl:max-w-[1440px]">
           <h3 className="font-duplicate-sans text-4xl leading-tight text-pitch-white lg:text-[66px] xl:max-w-[500px]">
             We are trusted by <span className="text-[#ED5E3B]">a community</span> of <br />
             <span className="text-black">1 Million+</span> Africans
@@ -239,7 +219,7 @@ const IndexPage = () => {
 
         <div className="mb-40 mt-20 flex gap-x-[43px] overflow-x-auto px-[8%]">
           {Array.from({ length: 4 }).map((_, index) => (
-            <div className="h-[406px] w-[400px] flex-shrink-0 rounded-[63px] bg-[#BCC1C8]" key={index} />
+            <div className="h-[303px] w-[300px] flex-shrink-0 rounded-[63px] bg-[#BCC1C8] lg:h-[406px] lg:w-[400px]" key={index} />
           ))}
         </div>
 

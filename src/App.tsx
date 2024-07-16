@@ -6,6 +6,7 @@ import IndexPage from "@/pages/IndexPage";
 
 const ProductPage = lazy(() => import("@/pages/ProductPage"));
 const CompanyPage = lazy(() => import("@/pages/CompanyPage"));
+const PartnersPage = lazy(() => import("@/pages/PartnersPage"));
 const StoriesPage = lazy(() => import("@/pages/StoriesPage"));
 const StoryDetailsPage = lazy(() => import("@/pages/StoriesPage/StoryDetails"));
 
@@ -18,6 +19,7 @@ const App = () => {
             <Route path="/" element={<IndexPage />} />
             <Route path="/products" element={<ProductPage />} />
             <Route path="/company" element={<CompanyPage />} />
+            <Route path="/partners" element={<PartnersPage />} />
             <Route path="/stories" element={<StoriesPage />} />
             <Route path="/stories/:id" element={<StoryDetailsPage />} />
             {/* <Route path="/signin" element={Public(<SignInPage />)} />
