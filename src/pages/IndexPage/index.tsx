@@ -21,8 +21,6 @@ import {
   Supplements,
   Techcrunch,
   Yahoo,
-  OuterFrame2,
-  OuterFrame,
   CarouselGroup1,
   CarouselGroup2,
   CarouselGroup3,
@@ -45,6 +43,8 @@ import OrizBanner from "@/assets/image/oriz-banner.webp";
 import OrizLadyMobile2 from "@/assets/image/OrizLadyMobile2.webp";
 import AppView from "@/assets/image/app-view.webp";
 import WebFrame from "@/assets/image/WebFrame.webp";
+import OuterFrame from "@/assets/image/outer-frame.webp";
+import OuterFrame2 from "@/assets/image/outer-frame2.webp";
 
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
