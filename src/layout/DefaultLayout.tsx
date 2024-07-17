@@ -1,17 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
-import {
-  AppStoreBlk,
-  Facebook,
-  FooterAppView,
-  FooterLogo,
-  Instagram,
-  Linkedin,
-  Logo,
-  LogoBlack,
-  Playstore,
-  Telegram,
-  Twitter,
-} from "@/assets/svg";
+import { AppStoreBlk, Facebook, FooterLogo, Instagram, Linkedin, Logo, LogoBlack, Playstore, Telegram, Twitter } from "@/assets/svg";
+import FooterAppView from "@/assets/image/footer-app-view.webp";
 import HamburgerMenuComponent from "@/components/hamburger-menu";
 import { useEffect } from "react";
 
@@ -74,7 +63,7 @@ const DefaultLayout: React.FC<DefaultLayoutProps> = ({ theme = "light", children
                 : "linear-gradient(to bottom, #0C513F 0%, #0C513F 45%, black 45%, black 100%)",
           }}
         >
-          <div className="relative mx-auto flex w-11/12 flex-col-reverse justify-between gap-y-16 pb-20 pt-28 lg:flex-row lg:items-end 2xl:max-w-[1440px]">
+          <div className="relative mx-auto flex w-11/12 flex-col-reverse justify-between gap-y-16 pb-20 pt-28 lg:grid lg:grid-cols-[1fr_2fr] lg:items-end 2xl:max-w-[1440px]">
             <div className="mb-10">
               <img src={FooterLogo} alt="Oriz logo" />
               <p className="my-6 max-w-[455px] font-jakarta text-xl text-white">
@@ -92,7 +81,7 @@ const DefaultLayout: React.FC<DefaultLayoutProps> = ({ theme = "light", children
               </div>
             </div>
 
-            <div className="relative top-0 lg:-right-[9%]">
+            <div className="relative -right-[10%] top-0 lg:-right-[15%]">
               <img src={FooterAppView} alt="Oriz app preview" />
             </div>
           </div>

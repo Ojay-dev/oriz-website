@@ -1,7 +1,6 @@
 import {
   AppStore,
   AppStoreBlk,
-  AppView,
   BackArrow,
   Bloomberg,
   CrunchBase,
@@ -22,6 +21,8 @@ import {
   Supplements,
   Techcrunch,
   Yahoo,
+  OuterFrame2,
+  OuterFrame,
   CarouselGroup1,
   CarouselGroup2,
   CarouselGroup3,
@@ -36,14 +37,14 @@ import {
   CarouselGroup12,
   CarouselGroup13,
   CarouselGroup14,
-  OrizLady2,
-  OrizLadyMobile2,
-  OrizBanner,
-  OuterFrame2,
-  OuterFrame,
-  WebFrame,
   OrizPartners,
 } from "@/assets/svg";
+
+import OrizLady2 from "@/assets/image/OrizLady2.webp";
+import OrizBanner from "@/assets/image/oriz-banner.webp";
+import OrizLadyMobile2 from "@/assets/image/OrizLadyMobile2.webp";
+import AppView from "@/assets/image/app-view.webp";
+import WebFrame from "@/assets/image/WebFrame.webp";
 
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
@@ -394,17 +395,19 @@ const IndexPage = () => {
             </p>
 
             <div className="mt-8 flex flex-col gap-x-5 gap-y-3 xl:flex-row">
-              <button className="flex items-center gap-x-2 rounded-xl bg-white px-8 py-[18px] text-base">
+              <button className="flex items-center justify-center gap-x-2 rounded-xl bg-white px-8 py-[18px] text-base lg:justify-start">
                 <img src={Playstore} alt="Play store icon" />
                 Get on Google Play
               </button>
 
-              <button className="flex items-center gap-x-2 rounded-xl bg-white px-8 py-[18px] text-base">
+              <button className="flex items-center justify-center gap-x-2 rounded-xl bg-white px-8 py-[18px] text-base lg:justify-start">
                 <img src={AppStoreBlk} alt="app store icon" /> Get on App Store
               </button>
             </div>
 
-            <img src={OuterFrame2} alt="" />
+            <div className="flex justify-center">
+              <img src={OuterFrame2} alt="" />
+            </div>
           </div>
 
           <div className="h-[735px] overflow-hidden rounded-[50px] border-[5px] bg-[#FFF8E4] px-8 pt-14 lg:px-10">
@@ -412,17 +415,19 @@ const IndexPage = () => {
             <p className="max-w-[420px] font-jakarta">Earn ORIZ tokens for healthy activities, redeemable for discounts and benefits.</p>
 
             <div className="mt-8 flex flex-col gap-x-5 gap-y-3 xl:flex-row">
-              <button className="flex items-center gap-x-2 rounded-xl bg-black px-8 py-[18px] text-base text-white">
+              <button className="flex items-center justify-center gap-x-2 rounded-xl bg-black px-8 py-[18px] text-base text-white lg:justify-start">
                 <img src={Playstore} alt="Play store icon" />
                 Get on Google Play
               </button>
 
-              <button className="flex items-center gap-x-2 rounded-xl bg-black px-8 py-[18px] text-base text-white">
+              <button className="flex items-center justify-center gap-x-2 rounded-xl bg-black px-8 py-[18px] text-base text-white lg:justify-start">
                 <img src={AppStore} alt="app store icon" /> Get on App Store
               </button>
             </div>
 
-            <img src={OuterFrame} alt="" />
+            <div className="flex justify-center">
+              <img src={OuterFrame} alt="" />
+            </div>
           </div>
         </div>
       </section>
