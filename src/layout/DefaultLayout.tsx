@@ -38,6 +38,9 @@ const DefaultLayout: React.FC<DefaultLayoutProps> = ({ theme = "light", children
             <li className="text-base font-medium">
               <Link to="/stories">Stories</Link>
             </li>
+            <li className="text-base font-medium">
+              <Link to="/tokens">Tokens</Link>
+            </li>
           </ul>
 
           <div className="hidden gap-x-6 lg:flex">
@@ -60,7 +63,9 @@ const DefaultLayout: React.FC<DefaultLayoutProps> = ({ theme = "light", children
             background:
               pathname === "/products"
                 ? "linear-gradient(to bottom, white 0%, white 45%, black 45%, black 100%)"
-                : "linear-gradient(to bottom, #0C513F 0%, #0C513F 45%, black 45%, black 100%)",
+                : pathname === "/tokens"
+                  ? "#000"
+                  : "linear-gradient(to bottom, #0C513F 0%, #0C513F 45%, black 45%, black 100%)",
           }}
         >
           <div className="relative mx-auto flex w-11/12 flex-col-reverse justify-between gap-y-16 pb-20 pt-28 lg:grid lg:grid-cols-[1fr_2fr] lg:items-end 2xl:max-w-[1440px]">

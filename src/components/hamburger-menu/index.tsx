@@ -37,6 +37,9 @@ const HamburgerMenuComponent = ({ theme }: HamburgerMenuProps) => {
 
           <ul className="flex flex-col gap-y-[18px] py-12 font-jakarta text-lg">
             <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
               <Link to="/products">Products</Link>
             </li>
             <li>
@@ -47,6 +50,9 @@ const HamburgerMenuComponent = ({ theme }: HamburgerMenuProps) => {
             </li>
             <li>
               <Link to="/stories">Stories</Link>
+            </li>
+            <li>
+              <Link to="/tokens">Tokens</Link>
             </li>
           </ul>
 

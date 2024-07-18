@@ -30,9 +30,6 @@ import {
   CarouselGroup12,
   CarouselGroup13,
   CarouselGroup14,
-  OuterFrame2,
-  OuterFrame,
-  WebFrame,
   YahooDark,
   BloombergDark,
   TechcrunchDark,
@@ -44,6 +41,9 @@ import {
 import VideoImage from "@/assets/image/oseme.png";
 import VideoImage2 from "@/assets/image/VidImg.png";
 import VideoImage3 from "@/assets/image/VidImg2.png";
+import WebFrame from "@/assets/image/WebFrame.webp";
+import OuterFrame from "@/assets/image/outer-frame.webp";
+import OuterFrame2 from "@/assets/image/outer-frame2.webp";
 
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
@@ -435,7 +435,9 @@ const IndexPage = () => {
               </button>
             </div>
 
-            <img src={OuterFrame2} alt="" />
+            <div className="mx-auto flex w-3/4 justify-center">
+              <img src={OuterFrame2} alt="" />
+            </div>
           </div>
 
           <div className="h-[735px] overflow-hidden rounded-[50px] border-[5px] bg-[#BD4355] px-6 pt-14 lg:px-10">
@@ -455,7 +457,9 @@ const IndexPage = () => {
               </button>
             </div>
 
-            <img src={OuterFrame} alt="" />
+            <div className="mx-auto flex w-3/4 justify-center">
+              <img src={OuterFrame} alt="" />
+            </div>
           </div>
         </div>
       </section>
@@ -600,7 +604,7 @@ const IndexPage = () => {
       </section>
 
       <section className="mx-auto mt-10 w-11/12 2xl:max-w-[1440px] 2xl:overflow-hidden">
-        <div className="grid items-center gap-x-[10%] rounded-[61px] bg-[#151515] px-6 py-16 text-white lg:grid-cols-[1.5fr_1fr] lg:px-20">
+        <div className="mb-36 grid items-center gap-x-[10%] rounded-[61px] bg-[#151515] px-6 py-16 text-white lg:grid-cols-[1.5fr_1fr] lg:px-20">
           <div>
             <h3 className="max-w-[650px] font-duplicate-sans text-4xl md:text-7xl">We’re your partner for a healthier future. </h3>
 

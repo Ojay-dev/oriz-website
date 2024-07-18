@@ -9,6 +9,7 @@ const CompanyPage = lazy(() => import("@/pages/CompanyPage"));
 const PartnersPage = lazy(() => import("@/pages/PartnersPage"));
 const StoriesPage = lazy(() => import("@/pages/StoriesPage"));
 const StoryDetailsPage = lazy(() => import("@/pages/StoriesPage/StoryDetails"));
+const TokensPage = lazy(() => import("@/pages/TokensPage"));
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
             <Route path="/partners" element={<PartnersPage />} />
             <Route path="/stories" element={<StoriesPage />} />
             <Route path="/stories/:id" element={<StoryDetailsPage />} />
+            <Route path="/tokens" element={<TokensPage />} />
             {/* <Route path="/signin" element={Public(<SignInPage />)} />
             <Route path="/forgot-password" element={Public(<ForgotPasswordPage />)} />
             <Route path="/reset-password" element={Public(<ResetPasswordPage />)} /> */}

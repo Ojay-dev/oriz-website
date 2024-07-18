@@ -405,7 +405,7 @@ const IndexPage = () => {
               </button>
             </div>
 
-            <div className="flex justify-center">
+            <div className="mx-auto flex w-3/4 justify-center">
               <img src={OuterFrame2} alt="" />
             </div>
           </div>
@@ -425,7 +425,7 @@ const IndexPage = () => {
               </button>
             </div>
 
-            <div className="flex justify-center">
+            <div className="mx-auto flex w-3/4 justify-center">
               <img src={OuterFrame} alt="" />
             </div>
           </div>

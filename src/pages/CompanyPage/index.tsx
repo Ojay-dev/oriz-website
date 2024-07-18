@@ -235,11 +235,7 @@ const IndexPage = () => {
                   className="rounded-2xl border border-white bg-[#1d1c1c4d] px-[28px] py-[18px]"
                 />
 
-                <input
-                  type="text"
-                  placeholder="First Name"
-                  className="rounded-2xl border border-white bg-[#1d1c1c4d] px-[28px] py-[18px]"
-                />
+                <input type="email" placeholder="Email" className="rounded-2xl border border-white bg-[#1d1c1c4d] px-[28px] py-[18px]" />
               </div>
 
               <button className="w-full rounded-xl bg-white px-10 py-6 text-base text-black">Subscribe</button>

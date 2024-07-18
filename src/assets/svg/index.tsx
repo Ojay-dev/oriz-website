@@ -61,6 +61,30 @@ import CarouselGroup11 from "./caurosel-group11.svg";
 import CarouselGroup12 from "./caurosel-group12.svg";
 import CarouselGroup13 from "./caurosel-group13.svg";
 import CarouselGroup14 from "./caurosel-group14.svg";
+import GraphIcon from "./graph-icon.svg";
+import Technology from "./technology.svg";
+import Community from "./community.svg";
+import Partnership from "./partnership.svg";
+import Reward from "./reward.svg";
+import Coinxy from "./crypto-icons/coinxy.svg";
+import Bittorent from "./crypto-icons/bittorent.svg";
+import Bitmax from "./crypto-icons/bitmax.svg";
+import Brand from "./crypto-icons/brand.svg";
+import CurrencyWave from "./crypto-icons/currencywave.svg";
+import Target from "./crypto-icons/target.svg";
+import MordernCryto from "./crypto-icons/mordern-crypto.svg";
+import Classic from "./crypto-icons/classic.svg";
+import Upshot from "./crypto-icons/up-shot.svg";
+import GatewayFrame from "./gateway-frame.svg";
+import DeclineChart from "./decline-chart.svg";
+import FastBolt from "./fast-bolt.svg";
+import SecureEncryption from "./secure-encryption.svg";
+import PrivateData from "./private-data.svg";
+import UptimeGuarantee from "./uptime-guarantee.svg";
+import Support from "./support.svg";
+import RegisterDashboard from "./register-dashboard.svg";
+import PurchaseProfile from "./purchase-profile.svg";
+import EarnGrowth from "./earn-growth.svg";
 
 export {
   Logo,
@@ -126,4 +150,28 @@ export {
   CarouselGroup12,
   CarouselGroup13,
   CarouselGroup14,
+  GraphIcon,
+  Technology,
+  Community,
+  Partnership,
+  Reward,
+  Coinxy,
+  Bittorent,
+  Bitmax,
+  Brand,
+  CurrencyWave,
+  Target,
+  MordernCryto,
+  Classic,
+  Upshot,
+  GatewayFrame,
+  DeclineChart,
+  FastBolt,
+  SecureEncryption,
+  PrivateData,
+  UptimeGuarantee,
+  Support,
+  RegisterDashboard,
+  PurchaseProfile,
+  EarnGrowth,
 };
