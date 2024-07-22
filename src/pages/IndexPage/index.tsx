@@ -50,6 +50,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 
 import DefaultLayout from "@/layout/DefaultLayout";
+import Accordion from "@/components/accordion-menu";
 
 const scrollablesFeatures = [
   { title: "Fitness Classes & Programs", image: Dumbell },
@@ -102,13 +103,13 @@ const carouselGroup = [
 ];
 
 const IndexPage = () => {
-  const marqueeRef = useRef(null);
-  const phoneCarouselRef = useRef(null);
+  const marqueeRef = useRef<HTMLDivElement>(null);
+  const phoneCarouselRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const marquee = marqueeRef?.current;
-    // @ts-ignore
-    const marqueeWidth = marquee?.scrollWidth;
+
+    const marqueeWidth = marquee?.scrollWidth ?? 0;
 
     gsap.to(marquee, {
       x: -marqueeWidth,
@@ -123,8 +124,7 @@ const IndexPage = () => {
 
   useEffect(() => {
     const phoneCarousel = phoneCarouselRef?.current;
-    // @ts-ignore
-    const marqueeWidth = phoneCarousel?.scrollWidth;
+    const marqueeWidth = phoneCarousel?.scrollWidth ?? 0;
 
     gsap.to(phoneCarousel, {
       x: -marqueeWidth,
@@ -149,7 +149,7 @@ const IndexPage = () => {
 
           {/* <img src={ORIZLady} alt="A smilling lady" className="mb-10 w-full rounded-[50px]" /> */}
 
-          <div className="overflow-hidden rounded-[50px]">
+          <div className="overflow-hidden rounded-[28px]">
             <iframe
               width="100%"
               height="350"
@@ -163,7 +163,7 @@ const IndexPage = () => {
           </div>
 
           <div className="mt-7">
-            <h2 className="font-duplicate-sans text-[35px] leading-tight lg:text-[66px]">
+            <h2 className="font-duplicate-sans text-[35px] leading-none lg:text-[66px]">
               Personalised plans for your unique{" "}
               <span className="relative">
                 wellness
@@ -173,17 +173,17 @@ const IndexPage = () => {
               </span>{" "}
               Journey
             </h2>
-            <p className="my-8 font-jakarta text-base leading-10">
+            <p className="my-8 font-jakarta text-base leading-normal">
               ORIZ is a solution for your health and wellness journey, providing you with personalized tools and benefits to help you lead a
               healthier life.
             </p>
 
             <div className="flex flex-col gap-x-6 gap-y-3">
-              <button className="rounded-xl bg-green-100 px-9 py-5 text-base">
+              <button className="flex h-[60px] items-center justify-center rounded-xl bg-green-100 px-9 text-base">
                 <span className="font-medium">Use Oriz AI</span> — For Free!{" "}
               </button>
 
-              <button className="flex h-[50px] items-center justify-center rounded-xl bg-[#252525] px-9 text-base text-white">
+              <button className="flex h-[60px] items-center justify-center rounded-xl bg-[#252525] px-9 text-base text-white">
                 Learn More
               </button>
             </div>
@@ -240,7 +240,7 @@ const IndexPage = () => {
 
         <div className="mx-auto mt-20 w-11/12 pb-12 2xl:max-w-[1440px]">
           <h4 className="mb-7 text-pitch-white">Featured on</h4>
-          <div className="flex flex-wrap justify-between gap-[42px]">
+          <div className="flex flex-nowrap justify-between gap-[42px] overflow-x-auto">
             <img src={Yahoo} alt="Yahoo logo" className="w-[40%] lg:w-[unset]" />
             <img src={Bloomberg} alt="Bloomberg logo" className="w-[40%] lg:w-[unset]" />
             <img src={Techcrunch} alt="Techcrunch logo" className="w-[40%] lg:w-[unset]" />
@@ -291,31 +291,7 @@ const IndexPage = () => {
         <div className="flex flex-col-reverse gap-[9%] xl:flex-row">
           <img src={OrizBanner} className="-ml-[9%] xl:-mt-96" alt="Oriz banner" />
 
-          <div className="w-full">
-            <ol className="font-duplicate-sans text-[27px] lg:text-[41px]">
-              <li className="border-b border-[#E9E9E9] p-10">
-                <div>
-                  <span className="mr-7 text-2xl text-[#ED5E3B]">01</span> Gym plans
-                </div>
-
-                <p className="mt-4 max-w-[450px] font-jakarta text-base leading-relaxed text-[#575757] md:text-2xl">
-                  Discounted gym memberships plan across our partners in Africa.
-                </p>
-              </li>
-
-              <li className="border-b border-[#E9E9E9] p-10">
-                <span className="mr-7 text-2xl text-[#B9B9B9]">02</span> Meals Plan
-              </li>
-
-              <li className="border-b border-[#E9E9E9] p-10">
-                <span className="mr-7 text-2xl text-[#B9B9B9]">03</span> Ai Integration
-              </li>
-
-              <li className="border-b border-[#E9E9E9] p-10">
-                <span className="mr-7 text-2xl text-[#B9B9B9]">04</span> Tokenize Rewards
-              </li>
-            </ol>
-          </div>
+          <Accordion />
         </div>
 
         <div className="mt-20 grid items-center lg:grid-cols-[2fr_1fr]">
