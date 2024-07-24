@@ -45,12 +45,15 @@ import AppView from "@/assets/image/app-view.webp";
 import WebFrame from "@/assets/image/WebFrame.webp";
 import OuterFrame from "@/assets/image/outer-frame.webp";
 import OuterFrame2 from "@/assets/image/outer-frame2.webp";
+import VideoThumbnail from "@/assets/image/dave_thumbnail.png";
+import Dave_video from "@/assets/video/dave.mp4";
 
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 
 import DefaultLayout from "@/layout/DefaultLayout";
 import Accordion from "@/components/accordion-menu";
+import VideoPlayer from "@/components/hero-video-player";
 
 const scrollablesFeatures = [
   { title: "Fitness Classes & Programs", image: Dumbell },
@@ -150,16 +153,7 @@ const IndexPage = () => {
           {/* <img src={ORIZLady} alt="A smilling lady" className="mb-10 w-full rounded-[50px]" /> */}
 
           <div className="overflow-hidden rounded-[28px]">
-            <iframe
-              width="100%"
-              height="350"
-              src="https://www.youtube.com/embed/f2Uw0O2iFJ0"
-              title="ORIZ INTERVIEW WITH DAVE"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-            ></iframe>
+            <VideoPlayer src={Dave_video} width="100%" height="680px" poster={VideoThumbnail} />
           </div>
 
           <div className="mt-7">
@@ -225,16 +219,7 @@ const IndexPage = () => {
           {/* <img src={ORIZLady} alt="A smilling lady" className="ml-auto rounded-[50px]" /> */}
 
           <div className="overflow-hidden rounded-[60px]">
-            <iframe
-              width="100%"
-              height="680"
-              src="https://www.youtube.com/embed/f2Uw0O2iFJ0"
-              title="ORIZ INTERVIEW WITH DAVE"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-            ></iframe>
+            <VideoPlayer src={Dave_video} width="100%" height="680px" poster={VideoThumbnail} />
           </div>
         </div>
 

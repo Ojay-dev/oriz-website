@@ -44,6 +44,8 @@ import Nutrition from "./nutrition.svg";
 import HealthCoaching from "./health-coaching.svg";
 import Organic from "./organic.svg";
 import PlayIcon from "./play-icon.svg";
+import PlayIcon_Rounded from "./play-icon-rounded.svg";
+import PauseIcon_Rounded from "./pause-icon-rounded.svg";
 import Supplements from "./supplements.svg";
 import QuickOnboarding from "./quick-onboarding.svg";
 import FitnessApparel from "./fitness-apparel.svg";
@@ -134,6 +136,8 @@ export {
   Organic,
   Supplements,
   PlayIcon,
+  PlayIcon_Rounded,
+  PauseIcon_Rounded,
   QuickOnboarding,
   FitnessApparel,
   CarouselGroup1,
