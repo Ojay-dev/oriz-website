@@ -153,7 +153,7 @@ const IndexPage = () => {
           {/* <img src={ORIZLady} alt="A smilling lady" className="mb-10 w-full rounded-[50px]" /> */}
 
           <div className="overflow-hidden rounded-[28px]">
-            <VideoPlayer src={Dave_video} width="100%" height="680px" poster={VideoThumbnail} />
+            <VideoPlayer src={Dave_video} poster={VideoThumbnail} />
           </div>
 
           <div className="mt-7">
@@ -219,7 +219,7 @@ const IndexPage = () => {
           {/* <img src={ORIZLady} alt="A smilling lady" className="ml-auto rounded-[50px]" /> */}
 
           <div className="overflow-hidden rounded-[60px]">
-            <VideoPlayer src={Dave_video} width="100%" height="680px" poster={VideoThumbnail} />
+            <VideoPlayer src={Dave_video} poster={VideoThumbnail} />
           </div>
         </div>
 

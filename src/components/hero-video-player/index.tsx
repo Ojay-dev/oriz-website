@@ -4,11 +4,9 @@ import { PauseIcon_Rounded, PlayIcon_Rounded } from "@/assets/svg";
 interface VideoPlayerProps {
   src: string;
   poster?: string;
-  width?: string;
-  height?: string;
 }
 
-const VideoPlayer: React.FC<VideoPlayerProps> = ({ src, poster, width = "100%", height = "680px" }) => {
+const VideoPlayer: React.FC<VideoPlayerProps> = ({ src, poster }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
